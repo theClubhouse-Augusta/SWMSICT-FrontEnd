@@ -1,0 +1,63 @@
+/* Navbar Styles */
+/*.navBar {
+    height:50px;
+    width:100%;
+    background:#999999;
+}*/
+
+.navBar {
+  display:flex;
+  flex-direction:row;
+  background:#ffffff;
+  width:100%;
+  height:100px;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.homeLogo
+{
+  align-items: left;
+
+}
+
+nav {
+  z-index: 998;
+}
+
+.menuIcon {
+display:flex;
+margin-right: 15px;
+font-size: 1.5em;
+}
+
+.siteName {
+  width:30%;
+  font-size:2em;
+  margin-left:10px;
+  margin-top: 10px;
+  font-variant:normal;
+  font-family: 'Yantramanav', sans-serif;
+}
+
+.nav {
+  width: 70%;
+  display:flex;
+  flex-direction:row;
+  justify-content:flex-end;
+  margin-right:15px;
+}
+
+.navButton {
+  color:#2d2d54;
+  text-decoration:none;
+  margin-right:15px;
+  font-weight:bold;
+  font-variant:normal;
+  font-family: 'Yantramanav', sans-serif;
+}
+
+.menuIcon {
+  display:none;
+}
+font-family: 'Yantramanav', sans-serif;

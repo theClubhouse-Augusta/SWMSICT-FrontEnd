@@ -1,0 +1,107 @@
+/* Submission Styles */
+
+.container {
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+.subBackground {
+  background: url('../../photos/bg.jpg');
+	background-size: cover;
+	font-family: 'Yantramanav', sans-serif;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/*.welcome{
+    width:100%;
+    background:#CCCCCC;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}*/
+
+.newsSubmission {
+    /*min-height:100vh;*/
+    position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%,-50%);
+  	width: 650px;
+  	padding: 80px 40px;
+  	box-sizing: border-box;
+  	height: 800px;
+  	background: rgba(0,0,0,.37);
+    text-align: center;
+}
+
+h1 {
+	margin: 0;
+	padding: 0 0 0px;
+	color: #FA8072;
+  font-size: 40px;
+	text-align: center;
+}
+
+.newsSubmission p {
+  margin: 0;
+	padding: 0;
+	font-weight: bold;
+	color: #fff;
+  font-family: 'Yantramanav', sans-serif;
+}
+
+.newsSubmission input
+{
+	width: 100%;
+	margin-bottom: 20px;
+}
+.newsSubmission input[type="text"],
+.newsSubmission input[type="Password"]
+{
+  border: none;
+	border-bottom: 1px solid #fff;
+	outline: none;
+	height: 40px;
+	background: transparent;
+	color: #fff;
+	font-size: 16px;
+}
+
+.newsSubmission input[type="submit"]
+{
+	border: none;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 25px;
+	background: rgba(255,255,255,.5);
+	cursor: pointer;
+	border-radius: 20px;
+  font-family: 'Yantramanav', sans-serif;
+  font-weight: bold;
+}
+.newsSubmission input[type="submit"]:hover
+{
+	background: #FA8072;
+	color: #fff;
+}
+
+/*
+input, textarea, select, button {
+    width: 100%;
+    margin: 0;
+    align-content: center;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.submit {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    position: absolute;
+    top: calc(-100px/2);
+    left: calc(50% - 50px);
+    HTML: <img className="submit" src={require("../../photos/submit.svg" )} className="submit"/>
+}*/
