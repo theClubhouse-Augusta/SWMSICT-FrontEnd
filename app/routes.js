@@ -37,10 +37,10 @@ export default function createRoutes() {
       },
     },
     {
-     path: '/Login',
-     name: 'Login',
+     path: '/Results',
+     name: 'Results',
      getComponent(nextState, comMod) {
-       import('containers/Login')
+       import('containers/Results')
          .then(loadModule(comMod))
          .catch(errorLoading);
      },

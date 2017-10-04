@@ -7,29 +7,53 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import Navbar from 'components/Navbar';
+import SignupBox from 'components/SignupBox';
 import './style.css';
 import './styleM.css';
 
-export default class Welcome extends React.PureComponent {
+export default class Results extends React.PureComponent {
+
+  handleDialog = ()=>{
+    this.setState({
+      open:!this.state.open
+    })
+  }
+
+  handleDialogSignup = ()=>{
+    this.setState({
+      openOne:!this.state.openOne
+    })
+  }
+
   render() {
     return (
-      <div className="container">
+      <div className="container background">
         <Helmet title="Welcome" meta={[ { name: 'description', content: 'Description of Welcome' }]}/>
         <header>
           <Navbar/>
         </header>
-        <div><h1>Welcome we&#8217;re excited to help you get started with your future investments</h1></div>
-        <p>New to investing?</p>
-        <input type="submit" value="Learn More"/>
-        <p>First time visiting the site?</p>
-        <input type="submit" value="Start New"/>
-        <p>Already have an account?</p>
-        <input type="submit" value="Log In"/>
+        <main>
+        <div className="welcomeTitle">
+        <h1>
+          <div>Your future</div>
+          <div>begins today.</div>
+        </h1>
+        </div>
+          <div className='welcomeScreen'>
+
+            <div className="buttons">
+              <input type="submit" value="Start Now"/>
+              <input type="submit" value="Learn More"/>
+            </div>
+            <input type="submit" value="Log In" style={{width:"320px"}}/>
+          </div>
+        </main>
       </div>
+
     );
   }
 }
 
-Welcome.contextTypes = {
+Results.contextTypes = {
   router: React.PropTypes.object
 };

@@ -66,28 +66,24 @@ export default class Navbar extends React.PureComponent {
 
     return (
       <div>
-        <div className="navBar">
-        <div className="siteName">
-        <img src={require("../../photos/minutemenfull.png")} className="homeLogo"/>
-        </div>
-        <div>
-
-        <nav className="nav">
+        <nav className="navBar">
+          <div className="siteName">
+            <img src={require("../../photos/logo.png")} className="homeLogo"/>
+          </div>
+          <div className="nav">
             <Link to="/" className="navButton">HOME</Link>
             <Link to="/UserInfo" className="navButton">SEARCH</Link>
             <Link to="/About" className="navButton">ABOUT</Link>
             <Link to="/Services" className="navButton">SERVICES</Link>
             <Link to="/Contact" className="navButton">CONTACT</Link>
             {loginButton}
-        </nav>
-
+          </div>
           <Bars className="menuIcon" onClick={this.handleMenu}/>
-
+        </nav>
+        {this.renderMenu()}
       </div>
 
-      {this.renderMenu()}
-    </div>
-  </div>
+
     );
   }
 }
