@@ -1,10 +1,10 @@
-/* UserInfoContribution Styles */
-.contributionContainer {
+/* UserInfoRisk Styles */
+.riskContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.userInfoContribution {
+.userInfoRisk {
   color: rgba(255,255,255, .9);
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@
   font-size: 3.1em;
 }
 
-.userInfoContribution input[type="number"] {
+.userInfoRisk input[type="number"] {
   width:60%;
   margin-top: 20px;
   background: rgba(255,255,255, 0);
@@ -27,7 +27,7 @@
   text-align: left;
 }
 
-.userInfoContribution input[type="submit"] {
+.userInfoRisk input[type="submit"] {
   width:150px;
   display: inline-block;
 	padding: 10px 14px;
@@ -45,16 +45,12 @@
 	cursor: pointer;
 }
 
-.userInfoContribution input[type="submit"]:hover
+.userInfoRisk input[type="submit"]:hover
 {
   background-color: rgba(255,255,255, 0.2);
 	color: #ECECEC;
 }
 
-.dollar {
-  font-size: 1.4em;
-  color: rgba(255,255,255, .7);
-}
-.userInfoContribution input[type="number"]:focus {
+.userInfoRisk input[type="number"]:focus {
   outline: none;
 }

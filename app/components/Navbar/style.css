@@ -36,7 +36,7 @@ nav {
 display:flex;
 margin-right: 15px;
 font-size: 1.5em;
-color: rgba(255,255,255, .7);
+color: rgba(255,255,255, .9);
 cursor: pointer;
 }
 
@@ -57,9 +57,9 @@ cursor: pointer;
 }
 
 .navButton {
-  color: rgba(255,255,255, .8);
+  color: rgba(255,255,255, .9);
   margin-right:15px;
-  font-weight:bold;
+  font-weight:normal;
   text-decoration:none;
 }
 

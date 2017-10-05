@@ -8,6 +8,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Navbar from 'components/Navbar';
 import UserInfoContribution from 'components/UserInfoContribution';
+import UserInfoRisk from 'components/UserInfoRisk';
 import './style.css';
 import './styleM.css';
 
@@ -22,7 +23,7 @@ export default class UserInfo extends React.PureComponent {
         </header>
 
         <main>
-          <UserInfoContribution/>
+          <UserInfoRisk/>
         </main>
 
         <footer className="footer">

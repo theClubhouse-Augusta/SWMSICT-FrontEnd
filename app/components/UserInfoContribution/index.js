@@ -18,7 +18,8 @@ export default class UserInfoContribution extends React.PureComponent {
             <div>How much are you</div>
             <div>interested in investing?</div>
           </h1>
-          <span><span className="dollar">$  </span><input type="number" min="00.00" step="any"/></span>
+          <span><span className="dollar"></span><input type="number" min="00.00" step="50" placeholder=""/></span>
+          <input type="submit" value="Continue" style={{width:"320px"}}/>
         </div>
       </div>
     );
