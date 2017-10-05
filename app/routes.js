@@ -11,34 +11,18 @@ export default function createRoutes() {
   return [
       {
        path: '/',
-<<<<<<< HEAD
        name: 'Welcome',
        getComponent(nextState, comMod) {
          import('containers/Welcome')
-=======
-       name: 'home',
-       getComponent(nextState, comMod) {
-         import('containers/Home')
->>>>>>> fefb71bf4efec44d71d1081d7369806f6cde123c
            .then(loadModule(comMod))
            .catch(errorLoading);
        },
      },
      {
-<<<<<<< HEAD
       path: '/UserInfo',
       name: 'UserInfo',
       getComponent(nextState, comMod) {
         import('containers/UserInfo')
-          .then(loadModule(comMod))
-          .catch(errorLoading);
-      },
-    },
-     {
-      path: '/About',
-      name: 'About',
-      getComponent(nextState, comMod) {
-        import('containers/About')
           .then(loadModule(comMod))
           .catch(errorLoading);
       },
@@ -52,18 +36,34 @@ export default function createRoutes() {
          .catch(errorLoading);
      },
    },
+   {
+    path: '/Services',
+    name: 'Services',
+    getComponent(nextState, comMod) {
+      import('containers/Services')
+        .then(loadModule(comMod))
+        .catch(errorLoading);
+      },
+    },
     {
-     path: '/Login',
-     name: 'Login',
+     path: '/About',
+     name: 'About',
      getComponent(nextState, comMod) {
-       import('containers/Login')
+       import('containers/About')
+         .then(loadModule(comMod))
+         .catch(errorLoading);
+     },
+   },
+    {
+     path: '/Contact',
+     name: 'Contact',
+     getComponent(nextState, comMod) {
+       import('containers/Contact')
          .then(loadModule(comMod))
          .catch(errorLoading);
      },
    },
      {
-=======
->>>>>>> fefb71bf4efec44d71d1081d7369806f6cde123c
       path: '*',
       name: 'notfound',
       getComponent(nextState, comMod) {
