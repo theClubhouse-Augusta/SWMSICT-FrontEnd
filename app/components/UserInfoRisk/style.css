@@ -26,9 +26,16 @@
   font-size: 1.5em;
   text-align: left;
 }
-
-.userInfoRisk input[type="submit"] {
-  width:150px;
+.riskChoice {
+  color: rgba(255,255,255, .9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: .3em;
+}
+.userInfoRisk input[type="button"] {
+  width:320px;
   display: inline-block;
 	padding: 10px 14px;
   margin: 40px;
@@ -45,7 +52,7 @@
 	cursor: pointer;
 }
 
-.userInfoRisk input[type="submit"]:hover
+.userInfoRisk input[type="button"]:hover
 {
   background-color: rgba(255,255,255, 0.2);
 	color: #ECECEC;
@@ -53,4 +60,16 @@
 
 .userInfoRisk input[type="number"]:focus {
   outline: none;
+}
+
+.riskRadio {
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  background:rgba(255,255,255, .4);
+  padding:15px;
+  width: 200px;
+  height: 200px;
+  border-radius:50%;
+  font-family: sans-serif;
 }
