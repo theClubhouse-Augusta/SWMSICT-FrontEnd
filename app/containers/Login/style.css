@@ -1,0 +1,102 @@
+/* Login Styles */
+
+.container {
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+.loginBackground
+{
+	background: url('../../photos/bg.jpg');
+	background-size: cover;
+	font-family: 'Yantramanav', sans-serif;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.loginBox
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 350px;
+	padding: 80px 40px;
+	box-sizing: border-box;
+	height: 500px;
+	background: rgba(0,0,0,.37);
+  text-align: center;
+}
+
+.lockPhoto
+{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: calc(-100px/2);
+    left: calc(50% - 50px);
+}
+
+h1
+{
+	margin: 0;
+	padding: 0 0 10px;
+	color: #FA8072;
+	text-align: center;
+}
+
+.loginBox p
+{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	color: #ddd;
+  font-family: 'Yantramanav', sans-serif;
+  font-size: 25px;
+}
+
+.loginBox input
+{
+	width: 100%;
+	margin-bottom: 20px;
+}
+.loginBox input[type="text"],
+.loginBox input[type="Password"]
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	outline: none;
+	height: 40px;
+	background: transparent;
+	color: #fff;
+	font-size: 16px;
+}
+
+.loginBox input[type="submit"]
+{
+	border: none;
+	outline: none;
+	height: 40px;
+	color: #eee;
+	font-size: 25px;
+	background: rgba(255,255,255,.5);
+	cursor: pointer;
+	border-radius: 20px;
+  font-family: 'Yantramanav', sans-serif;
+  font-weight: bold;
+}
+.loginBox input[type="submit"]:hover
+{
+	background: #FA8072;
+	color: #ddd;
+}
+.loginBox a
+{
+	color: #FA8072;
+	font-size: 22px;
+	font-weight: lighter;
+	text-decoration: none;
+}

@@ -11,13 +11,58 @@ export default function createRoutes() {
   return [
       {
        path: '/',
-       name: 'home',
+       name: 'Welcome',
        getComponent(nextState, comMod) {
-         import('containers/Home')
+         import('containers/Welcome')
            .then(loadModule(comMod))
            .catch(errorLoading);
        },
      },
+     {
+      path: '/UserInfo',
+      name: 'UserInfo',
+      getComponent(nextState, comMod) {
+        import('containers/UserInfo')
+          .then(loadModule(comMod))
+          .catch(errorLoading);
+      },
+    },
+    {
+     path: '/Results',
+     name: 'Results',
+     getComponent(nextState, comMod) {
+       import('containers/Results')
+         .then(loadModule(comMod))
+         .catch(errorLoading);
+     },
+   },
+   {
+    path: '/Services',
+    name: 'Services',
+    getComponent(nextState, comMod) {
+      import('containers/Services')
+        .then(loadModule(comMod))
+        .catch(errorLoading);
+      },
+    },
+    {
+     path: '/About',
+     name: 'About',
+     getComponent(nextState, comMod) {
+       import('containers/About')
+         .then(loadModule(comMod))
+         .catch(errorLoading);
+     },
+   },
+    {
+     path: '/Contact',
+     name: 'Contact',
+     getComponent(nextState, comMod) {
+       import('containers/Contact')
+         .then(loadModule(comMod))
+         .catch(errorLoading);
+     },
+   },
      {
       path: '*',
       name: 'notfound',

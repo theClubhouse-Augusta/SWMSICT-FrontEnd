@@ -1,0 +1,87 @@
+/* Dialog Styles */
+
+.renuiDialogOverlay {
+  height:calc(100vh -  50px);
+  width:100vw;
+  position:fixed;
+  bottom:0;
+  left:0;
+  background:rgba(0, 0, 0, 0.3);
+  animation: fadeIn 300ms;
+  z-index:997;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100%  { opacity: 1;  }
+}
+
+.renuiDialogOverlayHidden {
+  display:none;
+}
+
+.renuiDialog {
+  background:#FFFFFF;
+  min-height:28vh;
+  width:40vw;
+  z-index:998;
+  border-radius:5px;
+  box-shadow:0px 0px 10px 0px rgba(0, 0, 0, 0.6);
+  padding:15px;
+}
+
+.closeDialog {
+  width: 100%;
+  height: 100vw;
+  position: absolute;
+  z-index: 996;
+}
+
+.renuiDialog p {
+  margin: 0;
+	padding: 0;
+	font-weight: bold;
+	color: #787878;
+  font-family: 'Yantramanav', sans-serif;
+}
+
+.renuiDialog input
+{
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.renuiDialog input [type="text"]{
+  border: bottom;
+	border-bottom: 1px solid #fff;
+	outline: none;
+	height: 40px;
+	background: transparent;
+	color: #444;
+	font-size: 16px;
+  text-align: center;
+}
+
+.renuiDialog .resetButton{
+  border: none;
+	outline: none;
+	height: 40px;
+	color: #eee;
+	font-size: 25px;
+	background: #FA8072;
+	cursor: pointer;
+	border-radius: 20px;
+  font-family: 'Yantramanav', sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.renuiDialog .resetButton:hover
+{
+	background: #FA8072;
+	color: #787878;
+}

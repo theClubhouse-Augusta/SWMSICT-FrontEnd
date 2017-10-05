@@ -1,0 +1,69 @@
+/* Navbar Styles */
+/*.navBar {
+    height:50px;
+    width:100%;
+    background:#999999;
+}*/
+
+.navBar {
+  display:flex;
+  flex-direction:row;
+  background:rgba(0,0,0,0.0);
+  width:100%;
+  height:auto;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.homeLogo
+{
+  align-items: left;
+  height: 80px;
+  opacity:;
+  cursor: pointer;
+}
+
+.homeLogo:hover
+{
+  opacity: .8;
+}
+
+nav {
+  z-index: 998;
+}
+
+.menuIcon {
+display:flex;
+margin-right: 15px;
+font-size: 1.5em;
+color: rgba(255,255,255, .9);
+cursor: pointer;
+}
+
+.siteName {
+  width:30%;
+  font-size:2em;
+  margin-left:10px;
+  margin-top: 10px;
+  font-variant:normal;
+}
+
+.nav {
+  width: 70%;
+  display:flex;
+  flex-direction:row;
+  justify-content:flex-end;
+  margin-right:15px;
+}
+
+.navButton {
+  color: rgba(255,255,255, .9);
+  margin-right:15px;
+  font-weight:normal;
+  text-decoration:none;
+}
+
+.navButton:hover {
+  text-decoration:none;
+  color: rgba(255,255,255, 1);
+}
