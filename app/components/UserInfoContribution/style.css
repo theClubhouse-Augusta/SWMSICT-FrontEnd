@@ -1,0 +1,60 @@
+/* UserInfoContribution Styles */
+.contributionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.userInfoContribution {
+  color: rgba(255,255,255, .9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 3.1em;
+}
+
+.userInfoContribution input[type="number"] {
+  width:60%;
+  margin-top: 20px;
+  background: rgba(255,255,255, 0);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-width: thick;
+  border-color: rgba(255,255,255, .9);
+  color: rgba(255,255,255, .6);
+  font-size: 1.5em;
+  text-align: left;
+}
+
+.userInfoContribution input[type="submit"] {
+  width:150px;
+  display: inline-block;
+	padding: 10px 14px;
+  margin: 40px;
+	color: rgba(255,255,255, .8);
+	border: 4.0px solid rgba(255,255,255, .8);
+	text-decoration: none;
+	font-size: .6em;
+	line-height: 120%;
+	background-color: rgba(255,255,255, 0);
+	border-radius: 6px;
+	transition: 400ms ease;
+  font-weight: normal;
+  outline: none;
+	cursor: pointer;
+}
+
+.userInfoContribution input[type="submit"]:hover
+{
+  background-color: rgba(255,255,255, 0.2);
+	color: #ECECEC;
+}
+
+.dollar {
+  font-size: 1.4em;
+  color: rgba(255,255,255, .7);
+}
+.userInfoContribution input[type="number"]:focus {
+  outline: none;
+}
