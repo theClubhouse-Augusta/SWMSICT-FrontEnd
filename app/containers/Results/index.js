@@ -10,20 +10,20 @@ import Navbar from 'components/Navbar';
 import './style.css';
 import './styleM.css';
 
-export default class Home extends React.PureComponent {
+export default class Results extends React.PureComponent {
   constructor(){
     super();
     this.state={
-      newsletters:[]
+    //  newsletters:[]
 
     }
   }
 
   componentWillMount() {
-    this.getNewsletters();
+  //  this.getNewsletters();
   }
 
-  getNewsletters = () => {
+  /*getNewsletters = () => {
     fetch('http://localhost:8000/api/getNewsletters', {
       method:'get'
     })
@@ -35,7 +35,11 @@ export default class Home extends React.PureComponent {
         newsletters:json.newsletters
       })
     }.bind(this))
-  };
+  };*/
+
+  getResults = () => {
+
+  }/*End Function*/
 
   render() {
     return (
@@ -47,19 +51,30 @@ export default class Home extends React.PureComponent {
         </header>
 
         <main>
-            <div className="newsColumn">
-              {this.state.newsletters.map((newsletter,index)=>(
-                <a href={newsletter.url} className="newsItem">
-                    <div className="newsLogo">
-                    <img className="logoImage" src={newsletter.logo}/>
-                    </div>
-                    <div className="newsInfo">
-                        <div className="newsTitle">{newsletter.title}</div>
-                        <div className="newsDescription">{newsletter.description}</div>
-                    </div>
-                </a>
-              ))}
+            <div className="resultsPage">
 
+              <div className="filters">
+                <div className="title">Filters</div>
+                <div className="specialOffers">
+                  <div className="title">Special Offers</div>
+                  <div className="content"></div>
+                </div>{/*End className "specialOffers"*/}
+
+                <div className="physicalLocationAvailable">
+                  <div className="title">Physical Location Available</div>
+                  <div className="content"></div>
+                </div>{/*End className "physicalLocationAvailable"*/}
+              </div>{/*End className "filters"*/}
+
+              <div className="sortBy">
+                <div className="sortByFees"></div>
+                <div className="sortByPerformance"></div>
+              </div>{/*End className "sortBy"*/}
+
+              <div className="showResults">
+                {/*}<div className="specialOffers"></div>
+              <div className="physicalLocationAvailable"></div>*/}
+              </div>{/*End className "showResults"*/}
 
             </div>
 
@@ -71,6 +86,6 @@ export default class Home extends React.PureComponent {
   }
 }
 
-Home.contextTypes = {
+Results.contextTypes = {
   router: React.PropTypes.object
 };
