@@ -11,14 +11,21 @@ export default function createRoutes() {
   return [
       {
        path: '/',
+<<<<<<< HEAD
        name: 'Welcome',
        getComponent(nextState, comMod) {
          import('containers/Welcome')
+=======
+       name: 'home',
+       getComponent(nextState, comMod) {
+         import('containers/Home')
+>>>>>>> fefb71bf4efec44d71d1081d7369806f6cde123c
            .then(loadModule(comMod))
            .catch(errorLoading);
        },
      },
      {
+<<<<<<< HEAD
       path: '/UserInfo',
       name: 'UserInfo',
       getComponent(nextState, comMod) {
@@ -55,6 +62,8 @@ export default function createRoutes() {
      },
    },
      {
+=======
+>>>>>>> fefb71bf4efec44d71d1081d7369806f6cde123c
       path: '*',
       name: 'notfound',
       getComponent(nextState, comMod) {
