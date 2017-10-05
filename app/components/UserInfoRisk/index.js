@@ -19,7 +19,7 @@ export default class UserInfoRisk extends React.PureComponent {
             <div className ="emphasizedRisk">risk tolerance?</div>
           </h1>
           <div className="riskSlider">
-              <input type="range" min="1" max="100" value="50" class="slider" id="myRange"/>
+              <input type="range" min="1" max="100" value="50" class="slider" id="myRange" onChange={this.props.handleRisk}/>
               </div>
           <input type="submit" value="Continue" style={{width:"320px"}}/>
         </div>

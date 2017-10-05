@@ -13,6 +13,16 @@ import './style.css';
 import './styleM.css';
 
 export default class UserInfo extends React.PureComponent {
+  constructor() {
+    super();
+    this.state = {
+      riskLevel:0
+    }
+  }
+
+  handleRisk = (event) => {
+
+  }
   render() {
     return (
       <div className="container background">
@@ -23,7 +33,7 @@ export default class UserInfo extends React.PureComponent {
         </header>
 
         <main>
-          <UserInfoRisk/>
+          <UserInfoRisk handleRisk={this.handleRisk}/>
         </main>
 
         <footer className="footer">

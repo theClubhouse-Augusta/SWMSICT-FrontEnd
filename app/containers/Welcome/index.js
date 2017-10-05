@@ -13,18 +13,6 @@ import './styleM.css';
 
 export default class Results extends React.PureComponent {
 
-  handleDialog = ()=>{
-    this.setState({
-      open:!this.state.open
-    })
-  }
-
-  handleDialogSignup = ()=>{
-    this.setState({
-      openOne:!this.state.openOne
-    })
-  }
-
   render() {
     return (
       <div className="container background">
