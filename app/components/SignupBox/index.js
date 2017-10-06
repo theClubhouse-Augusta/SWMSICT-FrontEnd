@@ -16,21 +16,56 @@ export default class SignupBox extends React.PureComponent {
       return (
         <div className="signUpBox">
           <div className="label">
-            <p>Create Account
+            <p><strong>Create Account</strong>
               <div className="closeX">
-                <span className="x">
-                  <FaClose/>
+                <span>
+                  <FaClose className="x"/>
                 </span>
               </div>
             </p>
           </div>
           <br/>
           <div className="content">
-            <span className="firstName">
-              Name*: <input type="text" name="firstName" placeholder="(First)"></input>
+            <span className="line">
+              Name*: <input className="firstNameInput" type="text" name="firstName" placeholder="(First)"></input>&nbsp;&nbsp;&nbsp;
             </span>
-            <span className="lastName">
-              <input type="text" name="lastName" placeholder="(Last)"></input>
+            <span className="line">
+              <input className="lastNameInput" type="text" name="lastName" placeholder="(Last)"></input>
+            </span>
+            <br/><br/>
+            <span className="line">
+              Email*: <input className="emailInput" type="text" name="email"></input>
+            </span>
+            <br/><br/>
+            <span className="line">
+              Phone Number: <input className="phoneNumberInput" type="text" name="phoneNumber" placeholder="(xxx)xxx-xxxx"></input>
+            </span>
+            <br/><br/>
+            <span className="line">
+              Address: <br/>
+            </span>
+            <span className="line">
+              &#09;Street: <input className="streetInput" type="text" name="street" placeholder="123 Jackson Ave"></input><br/>
+            </span>
+            <span className="line">
+              &#09;City: <input className="cityInput" type="text" name="city" placeholder="Chigaco"></input><br/>
+            </span>
+            <span className="line">
+              &#09;State: <input className="stateInput" type="text" name="state" placeholder="Illinois"></input><br/>
+            </span>
+            <span className="line">
+              &#09;Zip Code: <input className="zipInput" type="text" name="zip" placeholder="60626"></input>
+            </span>
+            <br/><br/>
+            <span className="line">
+              Level of Investment Interest:&nbsp;&nbsp;&nbsp;&nbsp;
+              <input className="interestInput"className="range" type="range" name="interestLevel"></input>
+            </span>
+            <br/><br/>
+            <span className="line">
+              Would you like to be contacted?:&nbsp;&nbsp;&nbsp;&nbsp;
+              Yes <input className="contactYes" type="radio" name="contacted"></input>
+              No <input className="contactNo" type="radio" name="contacted"></input>
             </span>
           </div>
         </div>

@@ -1,28 +1,58 @@
 /* SignupBox Styles */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 .signUpBox {
   margin-top:100px;
   margin-left: auto;
   margin-right: auto;
-  width: 600px;
+  width: 425px;
   height: 400px;
   border-radius: 10px;
   z-index: 10000;
   border: 3px solid black;
+  background: #fafafa;
+}
+html, p {
+  font-family: 'Roboto', sans-serif;
 }
  .label {
-  background: #fafafa;
+  background: #dddddd;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   border-bottom: 1px solid black;
  }
  .label p {
-   padding: 0 5px;
-  padding-bottom: 20px;
+  padding: 0 5px;
+  padding-bottom: 5px;
+  padding-top: 5px;
  }
  .closeX {
    float: right;
-
  }
  .x {
   font-size: 20px;
+  color:black;
  }
+ .x:hover {
+   color: red;
+   animation: bounce 2s;
+   animation-iteration-count: 1;
+ }
+ .line {
+  margin-left: 10px;
+ }
+.range:focus {
+  outline: none;
+}
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.7);
+  }
+  100% {
+    transform: scale(1);
+  
+  }
+}

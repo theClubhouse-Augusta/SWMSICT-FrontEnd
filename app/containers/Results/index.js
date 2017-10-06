@@ -23,7 +23,7 @@ export default class Home extends React.PureComponent {
         </header>
 
         <main>
-          //<SignupBox/>
+          <SignupBox/>
         </main>
 
 
