@@ -24,7 +24,7 @@ export default class UserInfo extends React.PureComponent {
         </header>
 
         <main>
-          <UserInfoProducts/>
+          <UserInfoRisk/>
         </main>
 
         <footer className="footer">

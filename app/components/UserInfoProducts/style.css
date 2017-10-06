@@ -17,7 +17,41 @@
 font-family: sans-serif;
 }
 
-.userInfoProducts input[type="button"] {
+.checkboxContainer {
+  display: flex;
+  text-align: left;
+  font-size: .8em;
+}
+
+.columnOne {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+}
+
+.columnTwo {
+  display: flex;
+  flex-direction: column;
+  width: 310px;
+}
+.checkBox {
+  display:flex;
+  width: 46px;
+  border: 2px solid white;
+  border-radius: 5px;
+  float:left;
+  margin-right: 10px;
+}
+.option {
+/*  float:right;*/
+}
+.continueButtonContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.continueButton {
   width:320px;
   display: inline-block;
 	padding: 10px 14px;
@@ -33,6 +67,7 @@ font-family: sans-serif;
   font-weight: normal;
   outline: none;
 	cursor: pointer;
+  align-items: center;
 }
 
 .userInfoProducts input[type="submit"]:hover
