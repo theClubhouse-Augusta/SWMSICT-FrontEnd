@@ -53,16 +53,39 @@ export default class Results extends React.PureComponent {
         <main>
             <div className="resultsPage">
 
-              <div className="filters">
+              <header>
+                <h3 className="header3.">boing boing!</h3>
+              </header>
+
+              <div className="outerDiv">
+
+                  <div className="innerDiv"><h1 className="header1">This is Header 1.</h1></div>
+                  <div className="newDiv">
+                    <div className="mysticalDiv">mystical</div>
+                  </div>
+                  <h3 className="header3.">boing boing!</h3>
+              </div>
+
+                <h2 className="header2">This is Header 2.</h2>
+                  <h2>hahahaha<div className="innerDiv">Inner Div</div>hohohoho</h2>
+
+
+            <div className="filters">
                 <div className="title">Filters</div>
                 <div className="specialOffers">
                   <div className="title">Special Offers</div>
-                  <div className="content"></div>
+                  <div className="content">
+                    <input type="checkBox" name="yesSpecialOffers" onChange={this.handlePassword}/>
+                    <input type="checkBox" name="noSpecialOffers" onChange={this.handlePassword}/>
+                  </div>
                 </div>{/*End className "specialOffers"*/}
 
                 <div className="physicalLocationAvailable">
                   <div className="title">Physical Location Available</div>
-                  <div className="content"></div>
+                  <div className="content">
+                    <input type="checkBox" name="yesPhysicalLocationsAvailable" text="check box" onChange={this.handlePassword}/>
+                    <input type="checkBox" name="noPhysicalLocationsAvailable" text="check box" onChange={this.handlePassword}/>
+                  </div>
                 </div>{/*End className "physicalLocationAvailable"*/}
               </div>{/*End className "filters"*/}
 
