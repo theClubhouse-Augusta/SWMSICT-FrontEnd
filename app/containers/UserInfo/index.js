@@ -16,15 +16,21 @@ export default class UserInfo extends React.PureComponent {
     this.state = {
       userID: "",
       riskLevel: "0",
-      minInvestment: 50,
-      isStock: "0",
-      isBond: "0",
-      isMutualFund: "0",
-      isETF: "0",
-      isIndexFund: "0",
-      isRetirement: "0",
+      minInvestment: "50",
+      isStock: "",
+      isBond: "",
+      isMutualFund: "",
+      isETF: "",
+      isIndexFund: "",
+      isRetirement: "",
       getProducts: [],
-      success: ""
+      success: "",
+      messageNum: "",
+      options: "",
+      searchCriteria:[],
+      displayRiskLevel: "",
+      displayMinInvestment: "",
+      displayOptions: []
     }
   }
 
@@ -69,15 +75,13 @@ export default class UserInfo extends React.PureComponent {
 
     data.append('userID', 1);
     data.append('riskLevel', this.state.riskLevel);
-    data.append('minInvestment', 1);
+    data.append('minInvestment', 50);
     data.append('isStock', this.state.isStock);
     data.append('isBond', this.state.isBond);
     data.append('isMutualFund', this.state.isMutualFund);
     data.append('isETF', this.state.isETF);
     data.append('isIndexFund', this.state.isIndexFund);
     data.append('isRetirement', this.state.isRetirement);
-
-
 
     fetch ('http://localhost:8000/api/getProducts',{
       method: 'POST',
@@ -88,9 +92,12 @@ export default class UserInfo extends React.PureComponent {
     })
     .then(function(json){
       console.log(json.getProducts);
+      console.log(json.searchCriteria);
       this.setState({
         getProducts:json.getProducts,
-        success:json.success
+        message:json.message,
+        messageNum:json.messageNum,
+        searchCriteria:json.searchCriteria
       })
     }.bind(this))
 
@@ -105,8 +112,66 @@ export default class UserInfo extends React.PureComponent {
     document.getElementById('isIndexFund').checked = false;
     document.getElementById('isRetirement').checked = false;
 
-
   };
+
+  getResults = () => {
+    if(this.state.messageNum == 1){
+
+      return (
+        this.state.getProducts.map((product,index)=>(
+            <div>
+            <div><h3>{product.name}</h3></div>
+            <div><h4>{product.summary}</h4></div>
+            <div><br/><br/></div>
+            </div>
+        )));
+    }
+    else if (this.state.messageNum == 0) {
+        if (this.state.searchCriteria.length > 0) {
+
+          if (this.state.searchCriteria[0] == 1) {
+            this.state.displayRiskLevel = 'Aggressive';
+          }
+          else if (this.state.searchCriteria[0] == 2) {
+            this.state.displayRiskLevel = 'Moderate';
+          }
+          else if (this.state.searchCriteria[0] == 3) {
+            this.state.displayRiskLevel = 'Conservative';
+          }
+
+          for (let x = 2; x < this.state.searchCriteria.length; x++) {
+            let temp = this.state.searchCriteria[x] + ', ';
+            this.state.displayOptions.push(temp);
+          }
+
+
+
+
+            return this.state.displayOptions;
+
+
+
+
+
+        }
+        else {
+          return "";
+        }
+    }
+
+    this.setState({
+      messageNum:"",
+      riskLevel: "0",
+      isStock: "",
+      isBond: "",
+      isMutualFund: "",
+      isETF: "",
+      isIndexFund: "",
+      isRetirement: ""
+    })
+    .bind(this)
+  }
+
 
   render() {
     return (
@@ -140,14 +205,11 @@ export default class UserInfo extends React.PureComponent {
             <br/>
 
             <input type="button" value="Submit" onClick={this.getFormData}/>
-        <p>{this.state.success}</p>
 
-        {this.state.getProducts.map((product,index)=>(
-          <div>
-            <p>{product.name}</p>
-            <p>{product.summary}</p>
-          </div>
-            ))}
+            <div>{this.state.message}<br/><br/></div>
+            <div>{this.getResults()}</div>
+
+
 
       </div>
     );
