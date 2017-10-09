@@ -8,6 +8,8 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Navbar from 'components/Navbar';
 import SignupBox from 'components/SignupBox';
+import SignInBox from 'components/SignInBox';
+import WouldYouLike from 'components/WouldYouLike';
 import './style.css';
 import './styleM.css';
 
