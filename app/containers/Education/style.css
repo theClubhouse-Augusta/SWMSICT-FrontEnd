@@ -1,0 +1,88 @@
+/* Education Styles */
+
+.container {
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+  position: relative;
+}
+
+.background {
+
+}
+
+.educationBanner {
+  background-image: url("../../photos/education.jpg");
+  height:600px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+.educationBanner h1 {
+  font-size: 5.5em;
+  color: white;
+  text-align: center;
+  margin-top: 40px;
+  color: rgba(255,255,255, .7);
+}
+
+.educationBanner p {
+  font-size: 2em;
+  color: white;
+  font-family: sans-serif;
+}
+
+.imageBoxes {
+  display: flex;
+  flex-direction: row;
+  background: rgba(221, 221, 221,.7);
+  text-align: center;
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+.goalBox {
+  margin-left: 100px;
+}
+
+.goalBox h2 {
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+.riskBox {
+  margin-left: 50px;
+}
+
+.riskBox h2 {
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+.productBox {
+  margin-right: 100px;
+  margin-left: 50px;
+}
+
+.productBox h2 {
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+.imageBoxes h2 {
+  font-size: 1.2em;
+}
+
+.imageBoxes p {
+  font-size: 1.2em;
+}
+
+.educationInfo {
+  font-size: 1.4em;
+  color: #ddd;
+  background-color: #2F2D3A;
+  padding-left:90px;
+  padding-right: 90
+}

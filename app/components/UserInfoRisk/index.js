@@ -16,7 +16,7 @@ export default class UserInfoRisk extends React.PureComponent {
         <div className="userInfoRisk">
           <h1>
             <div>What is your investment</div>
-            <div className ="emphasizedRisk">risk tolerance?</div>
+            <div>risk tolerance?</div>
           </h1>
           <div className="riskChoice">
               <label className="riskRadio">
