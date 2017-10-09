@@ -26,12 +26,14 @@ export default class UserInfo extends React.PureComponent {
         <main>
           <UserInfoProducts/>
         </main>
-
-        <footer className="footer">
-            <span>CONTRIBUTION</span>
-            <span>RISK TOLERANCE</span>
-            <span>PRODUCTS</span>
+        <footer>
+          <ul className="progressBar">
+            <li class="active">CONTRIBUTION</li>
+            <li>RISK TOLERANCE</li>
+            <li>PRODUCTS</li>
+          </ul><br/>
         </footer>
+
 
       </div>
     );
