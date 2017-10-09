@@ -14,7 +14,7 @@ export default class Results extends React.PureComponent {
   constructor(){
     super();
     this.state={
-    //  newsletters:[]
+      products:[]
 
     }
   }
@@ -51,55 +51,81 @@ export default class Results extends React.PureComponent {
         </header>
 
         <main>
-            <div className="resultsPage">
+          <h1 className="openingHeader">Results Page</h1>
 
-              <header>
-                <h3 className="header3.">boing boing!</h3>
-              </header>
-
-              <div className="outerDiv">
-
-                  <div className="innerDiv"><h1 className="header1">This is Header 1.</h1></div>
-                  <div className="newDiv">
-                    <div className="mysticalDiv">mystical</div>
-                  </div>
-                  <h3 className="header3.">boing boing!</h3>
+          <div className="resultsPage">/* Currently a simple placeholder.*/
+            <p>Greetings!</p>
+            <div className="productSummary">
+              This is where a Product Summary will be.
+            </div>
+            /*<div className="todoList">
+            {this.state.products.map((product, index) => (
+              <div className="listItem" key={index} >{product.name} {product.content}{product.fundPerformance}
               </div>
+            ))}
 
-                <h2 className="header2">This is Header 2.</h2>
-                  <h2>hahahaha<div className="innerDiv">Inner Div</div>hohohoho</h2>
+          </div>*/
+          </div>{/*End className "resultsPage"*/}
 
+          <div className="controls">
 
             <div className="filters">
-                <div className="title">Filters</div>
-                <div className="specialOffers">
-                  <div className="title">Special Offers</div>
-                  <div className="content">
-                    <input type="checkBox" name="yesSpecialOffers" onChange={this.handlePassword}/>
-                    <input type="checkBox" name="noSpecialOffers" onChange={this.handlePassword}/>
-                  </div>
-                </div>{/*End className "specialOffers"*/}
+              <div className="title">Filters</div>
 
-                <div className="physicalLocationAvailable">
-                  <div className="title">Physical Location Available</div>
-                  <div className="content">
-                    <input type="checkBox" name="yesPhysicalLocationsAvailable" text="check box" onChange={this.handlePassword}/>
-                    <input type="checkBox" name="noPhysicalLocationsAvailable" text="check box" onChange={this.handlePassword}/>
-                  </div>
-                </div>{/*End className "physicalLocationAvailable"*/}
-              </div>{/*End className "filters"*/}
+              <div className="specialOffers">
+                <div className="title">Special Offers</div>
 
-              <div className="sortBy">
-                <div className="sortByFees"></div>
-                <div className="sortByPerformance"></div>
-              </div>{/*End className "sortBy"*/}
+                <div className="content">
+                  <input type="checkBox" onChange={this.handlePassword}/> -- Yes
+                </div>
 
-              <div className="showResults">
-                {/*}<div className="specialOffers"></div>
-              <div className="physicalLocationAvailable"></div>*/}
-              </div>{/*End className "showResults"*/}
+                <div className="content">
+                  <input type="checkBox" onChange={this.handlePassword}/> -- No
+                </div>
+              </div>{/*End className "specialOffers"*/}
 
-            </div>
+              <div className="physicalLocation">
+                <div className="title">Physical Location</div>
+
+                <div className="content">
+                  <input type="checkBox" onChange={this.handlePassword}/> -- Yes
+                </div>
+
+                <div className="content">
+                  <input type="checkBox" onChange={this.handlePassword}/> -- No
+                </div>
+              </div>{/*End className "physicalLocationAvailable"*/}
+            </div>{/*End className "filters"*/}
+
+            <div className="sortingOrder">
+              <div className="title">Sorting Order</div>
+
+              <div className="sortByFees">
+                <div className="title">Fees</div>
+
+                <div className="content">
+                  <input type="checkBox" onChange={this.handlePassword}/> -- High-Low
+                </div>{/*End className "content"*/}
+
+                <div className="content">
+                  <input type="checkBox" onChange={this.handlePassword}/> -- Low-High
+                </div>{/*End className "content"*/}
+
+              </div>{/*End className "sortByFees"*/}
+
+              <div className="sortByPerformance">
+                <div className="title">Fund Performance</div>
+
+                <div className="content">
+                  <input type="checkBox" onChange={this.handlePassword}/> -- High-Low
+                </div>{/*End className "content"*/}
+
+                <div className="content">
+                  <input type="checkBox" onChange={this.handlePassword}/> -- Low-High
+                </div>{/*End className "content"*/}
+              </div>{/*End className "sortByPerformance"*/}
+            </div>{/*End className "sortBy"*/}
+          </div>{/*End className "controls"*/}
 
         </main>
 
