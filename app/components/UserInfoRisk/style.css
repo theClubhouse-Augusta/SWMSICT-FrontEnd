@@ -11,6 +11,13 @@
   align-items: center;
   text-align: center;
   font-size: 3.1em;
+  animation-name: fadein;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .8; }
 }
 
 .riskChoice {
@@ -42,7 +49,7 @@
 }
 
 .riskRadio:hover {
-  background-color:rgba(164, 195, 215, .7);
+  background-color:rgba(158, 191, 210, .7);
 	color: rgba(255,255,255, 1);
   animation: grow 1s;
   animation-iteration-count: 1;
@@ -53,12 +60,13 @@
     transform: scale(1);
   }
   20% {
-    transform: scale(.5);
+    transform: scale(.98);
   }
   100% {
     transform: scale(1);
   }
 }
+
 .riskChoice input [type="radio"] {
   visibility: hidden;
 }
@@ -69,23 +77,20 @@
 	padding: 10px 14px;
   margin: 40px;
 	color: rgba(255,255,255, .8);
-	border: 4.0px solid rgba(255,255,255, .7);
+	border: 3.0px solid rgba(255,255,255, .7);
 	text-decoration: none;
 	font-size: .6em;
 	line-height: 120%;
 	background-color: rgba(255,255,255, 0);
 	border-radius: 6px;
-	transition: 700ms ease;
+	transition: 600ms ease;
   font-weight: normal;
   outline: none;
 	cursor: pointer;
 }
 
-.userInfoRisk input[type="button"]:hover { background-color:rgba(255,239,219, .7);
+.userInfoRisk input[type="button"]:hover {
+  background-color:rgba(201, 177, 155, .9);
 	color: rgba(255,255,255, 1);
-  border: 4px solid rgba(0, 127, 0, 0);
-}
-
-.userInfoRisk input[type="number"]:focus {
-  outline: none;
+  border: 3px solid rgba(0, 127, 0, 0);
 }
