@@ -24,8 +24,11 @@ export default class Education extends React.PureComponent {
           <div className="educationBanner">
             <Navbar/>
             <h1>
-              Investing Made Simple
+              Investing Made Easy
             </h1>
+            <p>
+              Demystifying Investing with 3 Simple Steps
+            </p>
           </div>
           <section className="imageBoxes">
             <label className="goalBox">
@@ -85,6 +88,27 @@ export default class Education extends React.PureComponent {
             <p>
               Spare ribs brisket beef ribs, andouille ground round in cupim mollit. Aliquip tongue hamburger filet mignon, rump ut chuck irure ribeye culpa picanha. Nulla quis sunt pariatur ground round nisi. Andouille brisket spare ribs pork belly, dolore capicola leberkas culpa turkey burgdoggen mollit velit in ham shoulder. Kielbasa sunt enim, ipsum t-bone alcatra cillum frankfurter sausage pastrami fatback. Dolore in leberkas tenderloin enim. Spare ribs strip steak non cupim sunt, short ribs officia tri-tip boudin chicken nulla jowl aute hamburger.
             </p>
+          </section>
+
+          <section>
+            <section className="startNowBox">
+              <div className="startNowButton">
+                <img src={require("../../photos/rocket.svg")}/>
+                <h2>
+                  Buckle Up
+                </h2><br/>
+                <p>
+                  We've taken the guesswork out of investing. Complete our
+                  <div>
+                  FREE 3 Step Profile Planner to review investment options that line up with YOUR goals.
+                  </div>
+                  <div>
+                  It doesn't get any easier than this.
+                  </div>
+                </p>
+                <input type="button" value="Start Now"/>
+              </div>
+            </section>
           </section>
         </main>
 

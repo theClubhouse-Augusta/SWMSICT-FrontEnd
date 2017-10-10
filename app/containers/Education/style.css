@@ -22,29 +22,44 @@
 
 .educationBanner h1 {
   font-size: 5.5em;
-  color: white;
   text-align: center;
-  margin-top: 40px;
-  color: rgba(255,255,255, .7);
+  margin-top: 140px;
+  color: rgba(248,250,242,.8);
 }
 
 .educationBanner p {
   font-size: 2em;
-  color: white;
-  font-family: sans-serif;
+  text-align: center;
+  margin-top: 10px;
+  color: rgba(248,250,242,.8);
+  animation-name: fadein;
+  animation-duration: 2s;
+}
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .8; }
 }
 
 .imageBoxes {
   display: flex;
   flex-direction: row;
-  background: rgba(221, 221, 221,.7);
+  background: #2F2D3A;
   text-align: center;
-  padding-top: 55px;
-  padding-bottom: 55px;
+  padding-top: 95px;
+  padding-bottom: 95px;
+  color: rgba(248,250,242,.9);
 }
 
+.imageBoxes h2 {
+  color: rgba(248,250,242,.9);
+  font-family: sans-serif;
+}
+
+.imageBoxes p {
+  color: rgba(248,250,242,.8);
+}
 .goalBox {
-  margin-left: 100px;
+  margin-left: 200px;
 }
 
 .goalBox h2 {
@@ -53,7 +68,7 @@ margin-bottom: 10px;
 }
 
 .riskBox {
-  margin-left: 50px;
+  margin-left: 150px;
 }
 
 .riskBox h2 {
@@ -62,8 +77,8 @@ margin-bottom: 10px;
 }
 
 .productBox {
-  margin-right: 100px;
-  margin-left: 50px;
+  margin-right: 200px;
+  margin-left: 150px;
 }
 
 .productBox h2 {
@@ -81,8 +96,55 @@ margin-bottom: 10px;
 
 .educationInfo {
   font-size: 1.4em;
-  color: #ddd;
-  background-color: #2F2D3A;
-  padding-left:90px;
-  padding-right: 90
+  color: #2F2D3A;
+  background-color:#ddd;
+  padding-left:300px;
+  padding-right:300px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.startNowBox {
+  display: flex;
+  flex-direction: row;
+  background: #2F2D3A;
+  text-align: center;
+  padding-top: 95px;
+  padding-bottom: 95px;
+  color: rgba(255,255,255, .8);
+  font-size: 1.5em;
+  justify-content: center;
+}
+
+.startNowBox h2 {
+  color: rgba(255,255,255, .9);
+  font-family: sans-serif;
+}
+
+.startNowBox p {
+  color: rgba(255,255,255, .7);
+}
+
+.startNowButton input[type="button"] {
+  width:270px;
+  display: inline-block;
+	padding: 10px 14px;
+  margin: 40px;
+	color: rgba(255,255,255,1);
+	border: 0px solid rgba(229, 168, 89, 1);
+	text-decoration: none;
+	font-size: 1.1em;
+	line-height: 130%;
+	background-color: rgba(229, 168, 89, 1);
+	border-radius: 6px;
+	transition: 400ms ease;
+  font-weight: normal;
+  outline: none;
+	cursor: pointer;
+}
+
+.startNowButton input[type="button"]:hover {
+  background-color:rgba(61, 98, 78, 1);
+	color: rgba(255,255,255, 1);
+  border: 0 solid rgba(61, 98, 78, 1);
 }
