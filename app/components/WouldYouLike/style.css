@@ -1,12 +1,12 @@
-/* SignupBox Styles */
+/* WouldYouLike Styles */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-.signUpBox {
+.wouldYouLikeBox {
   margin-top:100px;
   margin-left: auto;
   margin-right: auto;
   width: 420px;
-  height: 550px;
+  height: 480px;
   border-radius: 10px;
   z-index: 10000;
   border: 3px solid black;
@@ -22,7 +22,9 @@ html, p {
   border-bottom: 1px solid black;
  }
  .label p {
-  padding: 5px;
+  padding: 0 5px;
+  padding-bottom: 5px;
+  padding-top: 5px;
  }
  .closeX {
    float: right;
@@ -36,49 +38,21 @@ html, p {
    animation: bounce 2s;
    animation-iteration-count: 1;
  }
- .signUpBoxContent {
-   display: flex;
+ .wouldYouLikeContent {
+   display:flex;
    flex-direction: column;
    align-items: center;
+   text-align: center;
+   padding: 10px;
    font-size: 25px;
  }
- .line {
-  margin-left: 10px;
+ .buttonBox {
+   display: flex;
  }
-.range:focus {
-  outline: none;
-}
-.firstNameInput {
-  width: 140px;
-}
-.lastNameInput {
-  width: 140px;
-}
-.emailInput {
-  margin-left: 2px;
-  width: 140px;
-}
-.phoneNumberInput {
-  width: 100px;
-}
-.stateInput {
-  margin-left: 26px;
-}
-.cityInput {
-  margin-left: 35px;
-}
-.streetInput {
-  margin-left: 20px;
-}
-@keyframes bounce {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.7);
-  }
-  100% {
-    transform: scale(1);
-
-  }
-}
+ .button {
+   padding: 5px 10px;
+   font-size:20px;
+   border-radius: 10px;
+   border: 2px solid black;
+   margin: 5px;
+ }
