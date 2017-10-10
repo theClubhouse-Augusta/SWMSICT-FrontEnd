@@ -73,6 +73,10 @@ export default class UserInfo extends React.PureComponent {
   getFormData = () => {
     let data = new FormData();
 
+    this.setState({
+      displayOptions: []
+    });
+
     data.append('userID', 1);
     data.append('riskLevel', this.state.riskLevel);
     data.append('minInvestment', 50);
@@ -93,13 +97,187 @@ export default class UserInfo extends React.PureComponent {
     .then(function(json){
       console.log(json.getProducts);
       console.log(json.searchCriteria);
+      this.parseResults(json.searchCriteria);
       this.setState({
         getProducts:json.getProducts,
         message:json.message,
-        messageNum:json.messageNum,
-        searchCriteria:json.searchCriteria
+        messageNum:json.messageNum
       })
     }.bind(this))
+  }
+
+  parseResults = (data) => {
+    let displayOptions = this.state.displayOptions;
+    let riskLevel = 'Aggressive';
+
+    if (data.length > 0) {
+      if (data[0] == 1) {
+        riskLevel = 'Aggressive';
+      }
+      else if (data[0] == 2) {
+        riskLevel = 'Moderate';
+      }
+      else if (data[0] == 3) {
+        riskLevel:'Conservative';
+      }
+    }
+    let temp = '';
+    for (let x = 2; x < data.length; x++) {
+
+        if (x < data.length - 1) {
+            temp = data[x] + ', ';
+        }
+        else {
+          temp = data[x];
+        }
+
+        displayOptions.push(temp);
+
+        this.setState({
+          displayRiskLevel:riskLevel,
+          displayOptions:displayOptions,
+          displayMinInvestment:data[1]
+        })
+    }
+  }
+
+  renderResults = () => {
+    if(this.state.messageNum !== ''){
+
+      if(this.state.messageNum == 1){
+        let options = <span>{this.state.displayOptions}</span>;
+        return (
+          <div>
+            <div>
+            Results: {this.state.getProducts.length}<br/><br/>
+              You searched on: Risk level ({this.state.displayRiskLevel}), Minimum investment (${this.state.displayMinInvestment})
+            </div>
+            <div>
+              Products: {options}<br/><br/>
+            </div>
+              {this.state.message}<br/><br/>
+              {this.state.getProducts.map((product,index)=>(
+                  <div>
+                  <div><h3>{product.name}</h3></div>
+                  <div><h4>{product.summary}</h4></div>
+                  <span>Risk level: {product.riskLevel} </span><span>Minimum investment: ${product.minInvestment} </span><span>Type of investment: {product.isStock}</span>
+                  <div><br/><br/></div>
+                  </div>
+
+              ))}
+          </div>
+        )
+      }
+      else if (this.state.messageNum == 0) {
+        console.log(this.state.messageNum + 'hiya');
+        return (
+          <div>
+          <div>
+            You searched on: Risk level ({this.state.displayRiskLevel}), Minimum investment (${this.state.searchCriteria[1]})
+          </div>
+          <div>
+            Products: {this.state.displayOptions}<br/><br/>
+          </div>
+            {this.state.message}
+          </div>
+        )
+      }
+      else {
+        return "";
+      }
+    }
+  }
+
+
+    getResults = () => {
+
+      if (this.state.searchCriteria.length > 0) {
+
+        if (this.state.searchCriteria[0] == 1) {
+          this.state.displayRiskLevel = 'Aggressive';
+        }
+        else if (this.state.searchCriteria[0] == 2) {
+          this.state.displayRiskLevel = 'Moderate';
+        }
+        else if (this.state.searchCriteria[0] == 3) {
+          this.state.displayRiskLevel = 'Conservative';
+        }
+      }
+      let temp = '';
+      for (let x = 2; x < this.state.searchCriteria.length; x++) {
+
+          if (x < this.state.searchCriteria.length - 1) {
+              temp = this.state.searchCriteria[x] + ', ';
+          }
+          else {
+            temp = this.state.searchCriteria[x];
+          }
+            this.state.displayOptions.push(temp);
+      }
+
+      if (this.state.displayOptions == []) {
+        this.state.displayOptions = ['None selected'];
+      }
+
+        if(this.state.messageNum !== ''){
+
+        if(this.state.messageNum == 1){
+          let options = <span>{this.state.displayOptions}</span>;
+          return (
+            <div>
+              <div>
+              Results: {this.state.getProducts.length}<br/><br/>
+                You searched on: Risk level ({this.state.displayRiskLevel}), Minimum investment (${this.state.searchCriteria[1]})
+              </div>
+              <div>
+                Products: {options}<br/><br/>
+              </div>
+                {this.state.message}<br/><br/>
+                {this.state.getProducts.map((product,index)=>(
+                    <div>
+                    <div><h3>{product.name}</h3></div>
+                    <div><h4>{product.summary}</h4></div>
+                    <div><br/><br/></div>
+                    </div>
+
+                ))}
+            </div>
+          )
+        }
+        else if (this.state.messageNum == 0) {
+          console.log(this.state.messageNum + 'hiya');
+          return (
+            <div>
+            <div>
+              You searched on: Risk level ({this.state.displayRiskLevel}), Minimum investment (${this.state.searchCriteria[1]})
+            </div>
+            <div>
+              Products: {this.state.displayOptions}<br/><br/>
+            </div>
+              {this.state.message}
+            </div>
+          )
+        }
+      else {
+        return "";
+      }
+    }
+  }
+
+  resetState = () => {
+    this.setState({
+      messageNum:"",
+      riskLevel: "0",
+      isStock: "",
+      isBond: "",
+      isMutualFund: "",
+      isETF: "",
+      isIndexFund: "",
+      isRetirement: "",
+      searchCriteria:[],
+      displayRiskLevel: "",
+      displayOptions: []
+    });
 
     document.getElementById('riskLevel1').checked = false;
     document.getElementById('riskLevel2').checked = false;
@@ -112,65 +290,7 @@ export default class UserInfo extends React.PureComponent {
     document.getElementById('isIndexFund').checked = false;
     document.getElementById('isRetirement').checked = false;
 
-  };
-
-  getResults = () => {
-    if(this.state.messageNum == 1){
-
-      return (
-        this.state.getProducts.map((product,index)=>(
-            <div>
-            <div><h3>{product.name}</h3></div>
-            <div><h4>{product.summary}</h4></div>
-            <div><br/><br/></div>
-            </div>
-        )));
-    }
-    else if (this.state.messageNum == 0) {
-        if (this.state.searchCriteria.length > 0) {
-
-          if (this.state.searchCriteria[0] == 1) {
-            this.state.displayRiskLevel = 'Aggressive';
-          }
-          else if (this.state.searchCriteria[0] == 2) {
-            this.state.displayRiskLevel = 'Moderate';
-          }
-          else if (this.state.searchCriteria[0] == 3) {
-            this.state.displayRiskLevel = 'Conservative';
-          }
-
-          for (let x = 2; x < this.state.searchCriteria.length; x++) {
-            let temp = this.state.searchCriteria[x] + ', ';
-            this.state.displayOptions.push(temp);
-          }
-
-
-
-
-            return this.state.displayOptions;
-
-
-
-
-
-        }
-        else {
-          return "";
-        }
-    }
-
-    this.setState({
-      messageNum:"",
-      riskLevel: "0",
-      isStock: "",
-      isBond: "",
-      isMutualFund: "",
-      isETF: "",
-      isIndexFund: "",
-      isRetirement: ""
-    })
-    .bind(this)
-  }
+    };
 
 
   render() {
@@ -204,12 +324,11 @@ export default class UserInfo extends React.PureComponent {
 
             <br/>
 
-            <input type="button" value="Submit" onClick={this.getFormData}/>
-
-            <div>{this.state.message}<br/><br/></div>
-            <div>{this.getResults()}</div>
+            <input type="button" value="Submit Form" onClick={this.getFormData}/><br/><br/>
+            <input type="button" value="Reset Form" onClick={this.resetState}/>
 
 
+            <div>{this.renderResults()}<br/><br/></div>
 
       </div>
     );
