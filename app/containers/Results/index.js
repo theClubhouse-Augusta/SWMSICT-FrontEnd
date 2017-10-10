@@ -45,8 +45,6 @@ export default class Results extends React.PureComponent {
 
   }/*End Function*/
 
-export default class Home extends React.PureComponent {
-
 
   render() {
     return (
@@ -136,7 +134,6 @@ export default class Home extends React.PureComponent {
           </div>{/*End className "controls"*/}
 
 
-          <SignupBox/>
 
         </main>
 
