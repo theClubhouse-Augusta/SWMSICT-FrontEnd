@@ -37,6 +37,15 @@ export default function createRoutes() {
      },
    },
    {
+    path: '/Education',
+    name: 'Education',
+    getComponent(nextState, comMod) {
+      import('containers/Education')
+        .then(loadModule(comMod))
+        .catch(errorLoading);
+      },
+    },
+   {
     path: '/Services',
     name: 'Services',
     getComponent(nextState, comMod) {

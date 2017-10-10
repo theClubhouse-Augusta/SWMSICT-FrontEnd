@@ -5,6 +5,7 @@
   flex-direction:column;
   background:#AAAAAA;
   min-height:100vh;
+
 }
 
 .content {
@@ -155,4 +156,7 @@ input[type=checkbox]:hover {
   background: rgba(237, 41, 57, 0.5);
   text-decoration: none;
   float: left;
+
+  background: #dddddd;
+
 }

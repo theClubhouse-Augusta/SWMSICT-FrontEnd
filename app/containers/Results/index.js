@@ -7,8 +7,12 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import Navbar from 'components/Navbar';
+import SignupBox from 'components/SignupBox';
+import SignInBox from 'components/SignInBox';
+import WouldYouLike from 'components/WouldYouLike';
 import './style.css';
 import './styleM.css';
+
 
 export default class Results extends React.PureComponent {
   constructor(){
@@ -41,6 +45,9 @@ export default class Results extends React.PureComponent {
 
   }/*End Function*/
 
+export default class Home extends React.PureComponent {
+
+
   render() {
     return (
       <div className="container">
@@ -51,6 +58,7 @@ export default class Results extends React.PureComponent {
         </header>
 
         <main>
+
           <h1 className="openingHeader">Results Page</h1>
 
           <div className="resultsPage">/* Currently a simple placeholder.*/
@@ -127,9 +135,12 @@ export default class Results extends React.PureComponent {
             </div>{/*End className "sortBy"*/}
           </div>{/*End className "controls"*/}
 
+
+          <SignupBox/>
+
         </main>
 
-        <footer></footer>
+
       </div>
     );
   }

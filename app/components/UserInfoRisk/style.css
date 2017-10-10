@@ -11,46 +11,86 @@
   align-items: center;
   text-align: center;
   font-size: 3.1em;
+  animation-name: fadein;
+  animation-duration: 2s;
 }
 
-.userInfoRisk input[type="number"] {
-  width:60%;
-  margin-top: 20px;
-  background: rgba(255,255,255, 0);
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-width: thick;
-  border-color: rgba(255,255,255, .9);
-  color: rgba(255,255,255, .6);
-  font-size: 1.5em;
-  text-align: left;
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .8; }
 }
 
-.userInfoRisk input[type="submit"] {
-  width:150px;
+.riskChoice {
+  color: rgba(255,255,255, .9);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  font-size: .7em;
+}
+
+.riskRadio {
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  background: rgba(204, 203, 217, .4);
+  padding:15px;
+  width: 200px;
+  height: 200px;
+  border-radius:50%;
+  border:3px solid rgba(255,255,255, .3);
+  color: rgba(255,255,255, .8);
+  font-family: sans-serif;
+  font-weight: lighter;
+  justify-content: center;
+  margin:20px;
+  transition: 600ms ease;
+  cursor: pointer;
+}
+
+.riskRadio:hover {
+  background-color:rgba(158, 191, 210, .7);
+	color: rgba(255,255,255, 1);
+  animation: grow 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes grow {
+  90% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(.98);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.riskChoice input [type="radio"] {
+  visibility: hidden;
+}
+
+.userInfoRisk input[type="button"] {
+  width:320px;
   display: inline-block;
 	padding: 10px 14px;
   margin: 40px;
 	color: rgba(255,255,255, .8);
-	border: 4.0px solid rgba(255,255,255, .8);
+	border: 3.0px solid rgba(255,255,255, .7);
 	text-decoration: none;
 	font-size: .6em;
 	line-height: 120%;
 	background-color: rgba(255,255,255, 0);
 	border-radius: 6px;
-	transition: 400ms ease;
+	transition: 600ms ease;
   font-weight: normal;
   outline: none;
 	cursor: pointer;
 }
 
-.userInfoRisk input[type="submit"]:hover
-{
-  background-color: rgba(255,255,255, 0.2);
-	color: #ECECEC;
-}
-
-.userInfoRisk input[type="number"]:focus {
-  outline: none;
+.userInfoRisk input[type="button"]:hover {
+  background-color:rgba(201, 177, 155, .9);
+	color: rgba(255,255,255, 1);
+  border: 3px solid rgba(0, 127, 0, 0);
 }

@@ -9,10 +9,21 @@ import Helmet from 'react-helmet';
 import Navbar from 'components/Navbar';
 import UserInfoContribution from 'components/UserInfoContribution';
 import UserInfoRisk from 'components/UserInfoRisk';
+import UserInfoProducts from 'components/UserInfoProducts';
 import './style.css';
 import './styleM.css';
 
 export default class UserInfo extends React.PureComponent {
+  constructor() {
+    super();
+    this.state = {
+      riskLevel:0
+    }
+  }
+
+  handleRisk = (event) => {
+
+  }
   render() {
     return (
       <div className="container background">
@@ -23,14 +34,16 @@ export default class UserInfo extends React.PureComponent {
         </header>
 
         <main>
-          <UserInfoRisk/>
+          <UserInfoRisk handleRisk={this.handleRisk}/>
         </main>
-
-        <footer className="footer">
-            <span>CONTRIBUTION</span>
-            <span>RISK TOLERANCE</span>
-            <span>PRODUCTS</span>
+        <footer>
+          <ul className="progressBar">
+            <li class="active">CONTRIBUTION</li>
+            <li>RISK TOLERANCE</li>
+            <li>PRODUCTS</li>
+          </ul><br/>
         </footer>
+
 
       </div>
     );
