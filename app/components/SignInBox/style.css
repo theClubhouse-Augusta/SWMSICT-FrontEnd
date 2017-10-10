@@ -1,0 +1,87 @@
+/* SignInBox Styles */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.signInBox {
+  margin-top:100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 420px;
+  height: 300px;
+  border-radius: 10px;
+  z-index: 10000;
+  border: 3px solid black;
+  background: #fafafa;
+}
+html, p {
+  font-family: 'Roboto', sans-serif;
+}
+ .label {
+  background: #dddddd;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom: 1px solid black;
+ }
+ .label p {
+  padding: 0 5px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+ }
+ .closeX {
+   float: right;
+ }
+ .x {
+  font-size: 20px;
+  color:black;
+ }
+ .x:hover {
+   color: red;
+   animation: bounce 2s;
+   animation-iteration-count: 1;
+ }
+ .content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   font-size: 25px;
+ }
+.logInButton {
+  padding: 5px 10px;
+  font-size:20px;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+.logInButton:focus {
+  outline: none;
+}
+.logInButton:hover {
+
+}
+.logInButton:active {
+  
+}
+.input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: transparent;
+  text-align: center;
+  height: 25px;
+  font-size: 25px;
+  border-color: black;
+}
+.input:focus {
+  outline: none;
+}
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.7);
+  }
+  100% {
+    transform: scale(1);
+
+  }
+}

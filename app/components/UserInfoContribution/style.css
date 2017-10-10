@@ -11,6 +11,13 @@
   align-items: center;
   text-align: center;
   font-size: 3.1em;
+  animation-name: fadein;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .8; }
 }
 
 .userInfoContribution input[type="number"] {
@@ -27,13 +34,13 @@
   text-align: left;
 }
 
-.userInfoContribution input[type="submit"] {
-  width:150px;
+.userInfoContribution input[type="button"] {
+  width:320px;
   display: inline-block;
 	padding: 10px 14px;
   margin: 40px;
 	color: rgba(255,255,255, .8);
-	border: 4.0px solid rgba(255,255,255, .8);
+	border: 3.0px solid rgba(255,255,255, .8);
 	text-decoration: none;
 	font-size: .6em;
 	line-height: 120%;
@@ -45,10 +52,10 @@
 	cursor: pointer;
 }
 
-.userInfoContribution input[type="submit"]:hover
-{
-  background-color: rgba(255,255,255, 0.2);
-	color: #ECECEC;
+.userInfoContribution input[type="button"]:hover {
+  background-color:rgba(201, 177, 155, .9);
+	color: rgba(255,255,255, 1);
+  border: 3px solid rgba(0, 127, 0, 0);
 }
 
 .dollar {

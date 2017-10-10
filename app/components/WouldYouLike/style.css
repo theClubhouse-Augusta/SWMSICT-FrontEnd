@@ -1,0 +1,58 @@
+/* WouldYouLike Styles */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.wouldYouLikeBox {
+  margin-top:100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 420px;
+  height: 480px;
+  border-radius: 10px;
+  z-index: 10000;
+  border: 3px solid black;
+  background: #fafafa;
+}
+html, p {
+  font-family: 'Roboto', sans-serif;
+}
+ .label {
+  background: #dddddd;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom: 1px solid black;
+ }
+ .label p {
+  padding: 0 5px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+ }
+ .closeX {
+   float: right;
+ }
+ .x {
+  font-size: 20px;
+  color:black;
+ }
+ .x:hover {
+   color: red;
+   animation: bounce 2s;
+   animation-iteration-count: 1;
+ }
+ .wouldYouLikeContent {
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   padding: 10px;
+   font-size: 25px;
+ }
+ .buttonBox {
+   display: flex;
+ }
+ .button {
+   padding: 5px 10px;
+   font-size:20px;
+   border-radius: 10px;
+   border: 2px solid black;
+   margin: 5px;
+ }
