@@ -46,6 +46,7 @@ export default class Navbar extends React.PureComponent {
           <div className="nav">
             <Link to="/" className="navButton">HOME</Link>
             <Link to="/UserInfo" className="navButton">SEARCH</Link>
+            <Link to="/Education" className="navButton">LEARN</Link>
             <Link to="/About" className="navButton">ABOUT</Link>
             <Link to="/Services" className="navButton">SERVICES</Link>
             <Link to="/Contact" className="navButton">CONTACT</Link>
