@@ -1,0 +1,150 @@
+/* Education Styles */
+
+.container {
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+  position: relative;
+}
+
+.background {
+
+}
+
+.educationBanner {
+  background-image: url("../../photos/education.jpg");
+  height:600px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+.educationBanner h1 {
+  font-size: 5.5em;
+  text-align: center;
+  margin-top: 140px;
+  color: rgba(248,250,242,.8);
+}
+
+.educationBanner p {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 10px;
+  color: rgba(248,250,242,.8);
+  animation-name: fadein;
+  animation-duration: 2s;
+}
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .8; }
+}
+
+.imageBoxes {
+  display: flex;
+  flex-direction: row;
+  background: #2F2D3A;
+  text-align: center;
+  padding-top: 95px;
+  padding-bottom: 95px;
+  color: rgba(248,250,242,.9);
+}
+
+.imageBoxes h2 {
+  color: rgba(248,250,242,.9);
+  font-family: sans-serif;
+}
+
+.imageBoxes p {
+  color: rgba(248,250,242,.8);
+}
+.goalBox {
+  margin-left: 200px;
+}
+
+.goalBox h2 {
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+.riskBox {
+  margin-left: 150px;
+}
+
+.riskBox h2 {
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+.productBox {
+  margin-right: 200px;
+  margin-left: 150px;
+}
+
+.productBox h2 {
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+.imageBoxes h2 {
+  font-size: 1.2em;
+}
+
+.imageBoxes p {
+  font-size: 1.2em;
+}
+
+.educationInfo {
+  font-size: 1.4em;
+  color: #2F2D3A;
+  background-color:#ddd;
+  padding-left:300px;
+  padding-right:300px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.startNowBox {
+  display: flex;
+  flex-direction: row;
+  background: #2F2D3A;
+  text-align: center;
+  padding-top: 95px;
+  padding-bottom: 95px;
+  color: rgba(255,255,255, .8);
+  font-size: 1.5em;
+  justify-content: center;
+}
+
+.startNowBox h2 {
+  color: rgba(255,255,255, .9);
+  font-family: sans-serif;
+}
+
+.startNowBox p {
+  color: rgba(255,255,255, .7);
+}
+
+.startNowButton input[type="button"] {
+  width:270px;
+  display: inline-block;
+	padding: 10px 14px;
+  margin: 40px;
+	color: rgba(255,255,255,1);
+	border: 0px solid rgba(229, 168, 89, 1);
+	text-decoration: none;
+	font-size: 1.1em;
+	line-height: 130%;
+	background-color: rgba(229, 168, 89, 1);
+	border-radius: 6px;
+	transition: 400ms ease;
+  font-weight: normal;
+  outline: none;
+	cursor: pointer;
+}
+
+.startNowButton input[type="button"]:hover {
+  background-color:rgba(61, 98, 78, 1);
+	color: rgba(255,255,255, 1);
+  border: 0 solid rgba(61, 98, 78, 1);
+}
