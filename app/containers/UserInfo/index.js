@@ -17,12 +17,61 @@ export default class UserInfo extends React.PureComponent {
   constructor() {
     super();
     this.state = {
-      riskLevel:0
+      showUserInfoContribution: true,
+      showUserInfoRisk: false,
+      showUserInfoProducts: false
     }
   }
-
   handleRisk = (event) => {
 
+  }
+
+  handleContinue1 = () => {
+    this.setState({
+      showUserInfoContribution: false,
+      showUserInfoRisk: true
+    })
+  }
+
+  handleContinue2 = () => {
+    this.setState({
+      showUserInfoRisk: false,
+      showUserInfoProducts: true
+    })
+  }
+  handleContinue3 = () => {
+    this.context.router.push("/Results");
+  }
+
+  renderUserInfoContribution = () => {
+    if(this.state.showUserInfoContribution === true)
+    {
+      return (
+        <div>
+          <UserInfoContribution handleContinue1={this.handleContinue1}/>
+        </div>
+      )
+    }
+  }
+  renderUserInfoRisk = () => {
+    if(this.state.showUserInfoRisk === true)
+    {
+      return (
+        <div>
+          <UserInfoRisk handleContinue2={this.handleContinue2}/>
+        </div>
+      )
+    }
+  }
+  renderUserInfoProducts = () => {
+    if(this.state.showUserInfoProducts === true)
+    {
+      return (
+        <div>
+          <UserInfoProducts handleContinue3={this.handleContinue3}/>
+        </div>
+      )
+    }
   }
   render() {
     return (
@@ -34,7 +83,9 @@ export default class UserInfo extends React.PureComponent {
         </header>
 
         <main>
-          <UserInfoRisk handleRisk={this.handleRisk}/>
+          {this.renderUserInfoContribution()}
+          {this.renderUserInfoRisk()}
+          {this.renderUserInfoProducts()}
         </main>
         <footer>
           <ul className="progressBar">
