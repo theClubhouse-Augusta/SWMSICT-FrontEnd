@@ -19,13 +19,13 @@
 {
   align-items: left;
   height: 80px;
-  opacity:;
+  opacity:.8;
   cursor: pointer;
 }
 
 .homeLogo:hover
 {
-  opacity: .8;
+  opacity: 1;
 }
 
 nav {
@@ -57,7 +57,7 @@ cursor: pointer;
 }
 
 .navButton {
-  color: rgba(255,255,255, .7);
+  color: rgba(255,255,255, .8);
   margin-right:15px;
   font-weight:normal;
   text-decoration:none;

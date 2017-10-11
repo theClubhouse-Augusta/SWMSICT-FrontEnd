@@ -4,4 +4,99 @@
   display:flex;
   flex-direction:column;
   min-height:100vh;
+  position: relative;
+}
+
+.servicesBanner {
+  background-image: url("../../photos/services.jpg");
+  height:600px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.servicesBanner h1 {
+  font-size: 5.5em;
+  text-align: center;
+  margin-top: 140px;
+  color: rgba(248,250,242,.7);
+}
+
+.servicesBanner p {
+  font-size: 1.4em;
+  text-align: center;
+  margin-top: 10px;
+  color: rgba(242, 185, 155,.6);
+  animation-name: fadein;
+  animation-duration: 3s;
+}
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .8; }
+}
+
+.servicesImageBoxes {
+  display: flex;
+  flex-direction: row;
+  background:rgba(50, 51,70,1);
+  text-align: center;
+  padding-top: 95px;
+  padding-bottom: 95px;
+  color: rgba(248,250,242,.9);
+  font-size: 1.2em;
+}
+
+.servicesImageBoxes h2 {
+  /*color: rgba(242, 185, 155,1);*/
+  font-family: sans-serif;
+}
+
+.servicesImageBoxes p {
+  color: rgba(248,250,242,.8);
+}
+
+.goalBox {
+  margin-left: 200px;
+}
+
+.goalBox h2 {
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+.riskBox {
+  margin-left: 150px;
+}
+
+.riskBox h2 {
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+.productBox {
+  margin-right: 200px;
+  margin-left: 150px;
+}
+
+.productBox h2 {
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+.imageBoxes h2 {
+  font-size: 1.2em;
+}
+
+.imageBoxes p {
+  font-size: 1.2em;
+}
+
+.servicesInfo {
+  font-size: 1.4em;
+  color: rgba(50, 51,70,1);
+  background-color:#ddd;
+  padding-left:200px;
+  padding-right:200px;
+  padding-top: 90px;
+  padding-bottom: 90px;
 }

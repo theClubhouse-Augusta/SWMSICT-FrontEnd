@@ -13,7 +13,7 @@ import './styleM.css';
 export default class Education extends React.PureComponent {
   render() {
     return (
-      <div className="container background">
+      <div className="container">
         <Helmet title="Education" meta={[ { name: 'description', content: 'Description of Education' }]}/>
 
         <header>
@@ -24,35 +24,44 @@ export default class Education extends React.PureComponent {
           <div className="educationBanner">
             <Navbar/>
             <h1>
-              Investing Made Easy
+              Investing Fundamentals
             </h1>
             <p>
               Demystifying Investing with 3 Simple Steps
             </p>
           </div>
           <section className="imageBoxes">
-            <label className="goalBox">
-              <img src={require("../../photos/goal.svg")}/>
+            <label className="compoundInterestBox">
+              <img src={require("../../photos/compoundinterest.svg")}/>
               <h2>
-                Define Your Goal
+                Compound Interest
               </h2>
               <p>
                 Bacon ipsum dolor amet drumstick ham rump sirloin landjaeger tri-tip capicola prosciutto beef ribs shankle.
               </p>
             </label>
-            <label className="riskBox">
-              <img src={require("../../photos/risk.svg")}/>
+            <label className="educationProductBox">
+              <img src={require("../../photos/educationProducts.svg")}/>
               <h2>
-                Determine Risk Tolerance
+                Types of Funds
               </h2>
               <p>
                 Bacon ipsum dolor amet drumstick ham rump sirloin landjaeger tri-tip capicola prosciutto beef ribs shankle.
               </p>
             </label>
-            <label className="productBox">
-              <img src={require("../../photos/products.svg")}/>
+            <label className="educationPerformanceBox">
+              <img src={require("../../photos/educationPerformance.svg")}/>
               <h2>
-                Choose Products
+                Fund Performance
+              </h2>
+              <p>
+                Bacon ipsum dolor amet drumstick ham rump sirloin landjaeger tri-tip capicola prosciutto beef ribs shankle.
+              </p>
+            </label>
+            <label className="educationExpensesBox">
+              <img src={require("../../photos/educationExpenses.svg")}/>
+              <h2>
+                Expenses & Fees
               </h2>
               <p>
                 Bacon ipsum dolor amet drumstick ham rump sirloin landjaeger tri-tip capicola prosciutto beef ribs shankle.
@@ -62,7 +71,7 @@ export default class Education extends React.PureComponent {
 
           <section className="educationInfo">
             <h2>
-              Defining Your Goal
+              Compound Interest
             </h2>
             <p>
               Spicy jalapeno bacon ipsum dolor amet prosciutto ham chicken, sirloin eiusmod sausage excepteur. Irure flank shoulder do tri-tip, ground round pancetta sausage. Jowl corned beef excepteur beef ribs anim, tri-tip picanha capicola enim reprehenderit rump. Occaecat consequat aute, sint cow capicola velit rump id tempor qui pariatur incididunt.
@@ -71,7 +80,7 @@ export default class Education extends React.PureComponent {
               Spare ribs brisket beef ribs, andouille ground round in cupim mollit. Aliquip tongue hamburger filet mignon, rump ut chuck irure ribeye culpa picanha. Nulla quis sunt pariatur ground round nisi. Andouille brisket spare ribs pork belly, dolore capicola leberkas culpa turkey burgdoggen mollit velit in ham shoulder. Kielbasa sunt enim, ipsum t-bone alcatra cillum frankfurter sausage pastrami fatback. Dolore in leberkas tenderloin enim. Spare ribs strip steak non cupim sunt, short ribs officia tri-tip boudin chicken nulla jowl aute hamburger.
             </p><br/>
             <h2>
-              Risk Tolerance
+              Types of Funds
             </h2>
             <p>
               Spicy jalapeno bacon ipsum dolor amet prosciutto ham chicken, sirloin eiusmod sausage excepteur. Irure flank shoulder do tri-tip, ground round pancetta sausage. Jowl corned beef excepteur beef ribs anim, tri-tip picanha capicola enim reprehenderit rump. Occaecat consequat aute, sint cow capicola velit rump id tempor qui pariatur incididunt.
@@ -80,7 +89,16 @@ export default class Education extends React.PureComponent {
               Spare ribs brisket beef ribs, andouille ground round in cupim mollit. Aliquip tongue hamburger filet mignon, rump ut chuck irure ribeye culpa picanha. Nulla quis sunt pariatur ground round nisi. Andouille brisket spare ribs pork belly, dolore capicola leberkas culpa turkey burgdoggen mollit velit in ham shoulder. Kielbasa sunt enim, ipsum t-bone alcatra cillum frankfurter sausage pastrami fatback. Dolore in leberkas tenderloin enim. Spare ribs strip steak non cupim sunt, short ribs officia tri-tip boudin chicken nulla jowl aute hamburger.
             </p><br/>
             <h2>
-              Product Types
+              Fund Performance
+            </h2>
+            <p>
+              Spicy jalapeno bacon ipsum dolor amet prosciutto ham chicken, sirloin eiusmod sausage excepteur. Irure flank shoulder do tri-tip, ground round pancetta sausage. Jowl corned beef excepteur beef ribs anim, tri-tip picanha capicola enim reprehenderit rump. Occaecat consequat aute, sint cow capicola velit rump id tempor qui pariatur incididunt.
+            </p><br/>
+            <p>
+              Spare ribs brisket beef ribs, andouille ground round in cupim mollit. Aliquip tongue hamburger filet mignon, rump ut chuck irure ribeye culpa picanha. Nulla quis sunt pariatur ground round nisi. Andouille brisket spare ribs pork belly, dolore capicola leberkas culpa turkey burgdoggen mollit velit in ham shoulder. Kielbasa sunt enim, ipsum t-bone alcatra cillum frankfurter sausage pastrami fatback. Dolore in leberkas tenderloin enim. Spare ribs strip steak non cupim sunt, short ribs officia tri-tip boudin chicken nulla jowl aute hamburger.
+            </p><br/>
+            <h2>
+              Expenses & Fees
             </h2>
             <p>
               Spicy jalapeno bacon ipsum dolor amet prosciutto ham chicken, sirloin eiusmod sausage excepteur. Irure flank shoulder do tri-tip, ground round pancetta sausage. Jowl corned beef excepteur beef ribs anim, tri-tip picanha capicola enim reprehenderit rump. Occaecat consequat aute, sint cow capicola velit rump id tempor qui pariatur incididunt.
@@ -98,13 +116,7 @@ export default class Education extends React.PureComponent {
                   Buckle Up
                 </h2><br/>
                 <p>
-                  We've taken the guesswork out of investing. Complete our
-                  <div>
-                  FREE 3 Step Profile Planner to review investment options that line up with YOUR goals.
-                  </div>
-                  <div>
-                  It doesn't get any easier than this.
-                  </div>
+                  We've taken the guesswork out of investing. Complete our FREE 3 Step Profile Planner to review investment options that line up with YOUR goals. Investing has never been easier.
                 </p>
                 <input type="button" value="Start Now"/>
               </div>

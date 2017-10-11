@@ -6,7 +6,7 @@
   min-height:100vh;
 }
 
-.background {
+.welcomeBackground {
   background-image: url("../../photos/welcome.jpg");
   background-size: cover;
   background-position: center center;

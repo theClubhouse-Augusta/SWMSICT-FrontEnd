@@ -28,7 +28,7 @@ export default class UserInfoRisk extends React.PureComponent {
               <label className="riskRadio">
                 <input type="radio" name="risk" value="1" onClick={this.props.handleRiskLevel} hidden/>Aggressive</label>
           </div>
-          <input type="button" value="Continue"/>
+          <input type="button" value="Continue" onClick={this.props.handleContinue2}/>
         </div>
       </div>
     );
