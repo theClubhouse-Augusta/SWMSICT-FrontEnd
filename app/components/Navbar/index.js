@@ -48,8 +48,8 @@ export default class Navbar extends React.PureComponent {
       return(
         <nav className="navMobile">
           <Link to="/" className="navButton">Home</Link>
-          <Link to="/Submission" className="navButton">Submission</Link>
-          <Link to="Login" className="Login">Login</Link>
+          <Link to="/Search" className="navButton">Submission</Link>
+          <Link to="Login" className="Login"></Link>
         </nav>
       )
     }
@@ -74,7 +74,6 @@ export default class Navbar extends React.PureComponent {
             <Link to="/" className="navButton">HOME</Link>
             <Link to="/UserInfo" className="navButton">SEARCH</Link>
             <Link to="/Education" className="navButton">LEARN</Link>
-            <Link to="/About" className="navButton">ABOUT</Link>
             <Link to="/Services" className="navButton">SERVICES</Link>
             <Link to="/Contact" className="navButton">CONTACT</Link>
             {loginButton}
@@ -83,8 +82,6 @@ export default class Navbar extends React.PureComponent {
         </nav>
         {this.renderMenu()}
       </div>
-
-
     );
   }
 }

@@ -28,7 +28,7 @@
   margin-top: 10px;
   color: rgba(248,250,242,.8);
   animation-name: fadein;
-  animation-duration: 2s;
+  animation-duration: 4s;
 }
 @-webkit-keyframes fadein {
     from { opacity: 0; }
@@ -43,6 +43,7 @@
   padding-top: 95px;
   padding-bottom: 95px;
   color: rgba(248,250,242,.9);
+  font-size: 1.2em;
 }
 
 .imageBoxes h2 {
@@ -63,7 +64,7 @@ margin-bottom: 10px;
 }
 
 .educationProductBox {
-  margin-left: 150px;
+  margin-left: 100px;
 }
 
 .educationProductBox h2 {
@@ -72,7 +73,7 @@ margin-bottom: 10px;
 }
 
 .educationPerformanceBox {
-  margin-left: 150px;
+  margin-left: 100px;
 }
 
 .educationPerformanceBox h2 {
@@ -81,7 +82,7 @@ margin-bottom: 10px;
 }
 
 .educationExpensesBox {
-  margin-left: 150px;
+  margin-left: 100px;
   margin-right: 200px;
 }
 
@@ -137,11 +138,11 @@ margin-bottom: 10px;
 	padding: 10px 14px;
   margin: 40px;
 	color: rgba(255,255,255,1);
-	border: 0px solid rgba(229, 168, 89, 1);
+	border: 0px solid rgba(171, 102, 76, 1);
 	text-decoration: none;
 	font-size: 1.1em;
 	line-height: 130%;
-	background-color: rgba(229, 168, 89, 1);
+	background-color: rgba(171, 102, 76, 1);
 	border-radius: 6px;
 	transition: 400ms ease;
   font-weight: normal;
@@ -150,7 +151,7 @@ margin-bottom: 10px;
 }
 
 .startNowButton input[type="button"]:hover {
-  background-color:rgba(255,255,255, .8);
-	color: #2F2D3A;
-  border: 0 solid rgba(255,255,255, 1);
+  background-color:rgba(171, 102, 76, 1);
+	color: rgba(255,255,255,1);
+  border: 0 solid rgba(171, 102, 76, 1);
 }

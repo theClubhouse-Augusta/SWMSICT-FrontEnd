@@ -24,16 +24,16 @@ export default class Services extends React.PureComponent {
           <div className="servicesBanner">
             <Navbar/>
             <h1>
-              Investing Made Easy
+              Investing Made Simple
             </h1>
             <p>
               Investing can be intimidating. It doesn't have to be.
               <div>
-              Achieve your goals in seconds using our 3 step approach.
+              Start building toward your goal in seconds using our 3 step approach.
               </div>
             </p>
           </div>
-          <section className="imageBoxes">
+          <section className="servicesImageBoxes">
             <label className="goalBox">
               <img src={require("../../photos/goal.svg")}/>
               <h2>

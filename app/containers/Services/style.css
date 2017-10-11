@@ -23,19 +23,19 @@
 }
 
 .servicesBanner p {
-  font-size: 1.5em;
+  font-size: 1.4em;
   text-align: center;
   margin-top: 10px;
-  color: rgba(248,250,242,.8);
+  color: rgba(242, 185, 155,.6);
   animation-name: fadein;
-  animation-duration: 2s;
+  animation-duration: 3s;
 }
 @-webkit-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: .8; }
 }
 
-.imageBoxes {
+.servicesImageBoxes {
   display: flex;
   flex-direction: row;
   background:rgba(50, 51,70,1);
@@ -43,14 +43,15 @@
   padding-top: 95px;
   padding-bottom: 95px;
   color: rgba(248,250,242,.9);
+  font-size: 1.2em;
 }
 
-.imageBoxes h2 {
-  color: rgba(242, 185, 155,1);
+.servicesImageBoxes h2 {
+  /*color: rgba(242, 185, 155,1);*/
   font-family: sans-serif;
 }
 
-.imageBoxes p {
+.servicesImageBoxes p {
   color: rgba(248,250,242,.8);
 }
 
