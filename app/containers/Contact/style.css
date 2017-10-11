@@ -5,3 +5,90 @@
   flex-direction:column;
   min-height:100vh;
 }
+
+.contactBanner {
+  background-color:#2F3650;
+  height:200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contactBanner h1 {
+  font-size: 5em;
+  text-align: center;
+  color: rgba(248,250,242,.8);
+}
+
+.contactBanner p {
+  font-size: 1em;
+  text-align: center;
+  margin-top: 10px;
+  color: rgba(248,250,242,.8);
+  animation-name: fadein;
+  animation-duration: 4s;
+}
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .8; }
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: row;
+  background:#2F3650;
+  text-align: center;
+  padding-top: 95px;
+  padding-bottom: 95px;
+  color: rgba(248,250,242,.9);
+  font-size: 1.2em;
+}
+
+.contactInfo {
+  margin-left: 10px;
+  background-color: #aaa;
+  margin-bottom: 10px;
+}
+
+.contactInfo h2 {
+  margin-bottom: 10px;
+}
+
+.contactInput {
+  margin-left: 10px;
+  background-color: #aaa;
+  margin-bottom: 10px;
+}
+
+.contactForm input[type="text"] {
+  width: 100%;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+  color: #fff;
+}
+
+.contactForm input[type="submit"] {
+  width:320px;
+  display: inline-block;
+  padding: 10px 14px;
+  color: rgba(255,255,255, .8);
+  border: 3.0px solid rgba(255,255,255, .8);
+  text-decoration: none;
+  line-height: 120%;
+  background-color: rgba(255,255,255, 0);
+  border-radius: 6px;
+  transition: 400ms ease;
+  font-weight: normal;
+  outline: none;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.contactForm input[type="submit"]:hover {
+  background-color:rgba(255,255,255, 1);
+  color: #2F3650;
+  border: 3px solid rgba(255,255,255, 1);
+}

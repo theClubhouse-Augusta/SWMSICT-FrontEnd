@@ -75,7 +75,7 @@ export default class UserInfo extends React.PureComponent {
   }
   render() {
     return (
-      <div className="container background">
+      <div className="container userInfoBackground">
         <Helmet title="UserInfo" meta={[ { name: 'description', content: 'Description of UserInfo' }]}/>
 
         <header>
