@@ -15,7 +15,7 @@ export default class Results extends React.PureComponent {
 
   render() {
     return (
-      <div className="container background">
+      <div className="container welcomeBackground">
         <Helmet title="Welcome" meta={[ { name: 'description', content: 'Description of Welcome' }]}/>
         <header>
           <Navbar/>
