@@ -13,13 +13,10 @@ import SignInBox from 'components/SignInBox';
 import './style.css';
 import './styleM.css';
 
-export default class Results extends React.PureComponent {
+export default class Welcome extends React.PureComponent {
 
   render() {
     return (
-
-      <div className="container background">
-
 
       <div className="container welcomeBackground">
 
@@ -52,6 +49,6 @@ export default class Results extends React.PureComponent {
   }
 }
 
-Results.contextTypes = {
+Welcome.contextTypes = {
   router: React.PropTypes.object
 };
