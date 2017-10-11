@@ -90,7 +90,7 @@ export default class UserInfoProducts extends React.PureComponent {
               </div>
             </div>
           </div>
-            <input type="button" value="Continue"/>
+            <input type="button" value="Continue" onClick={this.props.handleContinue3}/>
         </div>
       </div>
     );
