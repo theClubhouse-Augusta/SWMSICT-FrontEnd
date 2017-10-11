@@ -1,12 +1,13 @@
-/* SignupBox Styles */
+/* SignInBox Styles */
+
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-.signUpBox {
+.signInBox {
   margin-top:100px;
   margin-left: auto;
   margin-right: auto;
   width: 420px;
-  height: 550px;
+  height: 300px;
   border-radius: 10px;
   z-index: 10000;
   border: 3px solid black;
@@ -22,7 +23,9 @@ html, p {
   border-bottom: 1px solid black;
  }
  .label p {
-  padding: 5px;
+  padding: 0 5px;
+  padding-bottom: 5px;
+  padding-top: 5px;
  }
  .closeX {
    float: right;
@@ -36,39 +39,39 @@ html, p {
    animation: bounce 2s;
    animation-iteration-count: 1;
  }
- .signUpBoxContent {
+ .content {
    display: flex;
    flex-direction: column;
    align-items: center;
    font-size: 25px;
  }
- .line {
-  margin-left: 10px;
- }
-.range:focus {
+.logInButton {
+  padding: 5px 10px;
+  font-size:20px;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+.logInButton:focus {
   outline: none;
 }
-.firstNameInput {
-  width: 140px;
+.logInButton:hover {
+
 }
-.lastNameInput {
-  width: 140px;
+.logInButton:active {
+  
 }
-.emailInput {
-  margin-left: 2px;
-  width: 140px;
+.input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: transparent;
+  text-align: center;
+  height: 25px;
+  font-size: 25px;
+  border-color: black;
 }
-.phoneNumberInput {
-  width: 100px;
-}
-.stateInput {
-  margin-left: 26px;
-}
-.cityInput {
-  margin-left: 35px;
-}
-.streetInput {
-  margin-left: 20px;
+.input:focus {
+  outline: none;
 }
 @keyframes bounce {
   0% {
