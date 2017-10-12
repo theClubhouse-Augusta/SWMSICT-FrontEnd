@@ -138,11 +138,11 @@ margin-bottom: 10px;
 	padding: 10px 14px;
   margin: 40px;
 	color: rgba(255,255,255,1);
-	border: 0px solid rgba(171, 102, 76, 1);
+	border: 0px solid rgba(209, 118, 27, 1);
 	text-decoration: none;
 	font-size: 1.1em;
 	line-height: 130%;
-	background-color: rgba(171, 102, 76, 1);
+	background-color: rgba(209, 118, 27, .7);
 	border-radius: 6px;
 	transition: 400ms ease;
   font-weight: normal;
@@ -151,7 +151,7 @@ margin-bottom: 10px;
 }
 
 .startNowButton input[type="button"]:hover {
-  background-color:rgba(171, 102, 76, 1);
+  background-color:rgba(209, 118, 27, 1);
 	color: rgba(255,255,255,1);
-  border: 0 solid rgba(171, 102, 76, 1);
+  border: 0 solid rgba(209, 118, 27, 1);
 }

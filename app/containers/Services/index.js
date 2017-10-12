@@ -35,7 +35,7 @@ export default class Services extends React.PureComponent {
           </div>
           <section className="servicesImageBoxes">
             <label className="goalBox">
-              <img src={require("../../photos/goal.svg")}/>
+              <img src={require("../../photos/services-goal.svg")}/>
               <h2>
                 Define Your Goal
               </h2>
@@ -44,7 +44,7 @@ export default class Services extends React.PureComponent {
               </p>
             </label>
             <label className="riskBox">
-              <img src={require("../../photos/risk.svg")}/>
+              <img src={require("../../photos/services-risk.svg")}/>
               <h2>
                 Determine Risk Tolerance
               </h2>
@@ -53,7 +53,7 @@ export default class Services extends React.PureComponent {
               </p>
             </label>
             <label className="productBox">
-              <img src={require("../../photos/products.svg")}/>
+              <img src={require("../../photos/services-products.svg")}/>
               <h2>
                 Choose Products
               </h2>

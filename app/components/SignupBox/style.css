@@ -5,12 +5,12 @@
   margin-top:100px;
   margin-left: auto;
   margin-right: auto;
-  width: 720px;
-  height: 610px;
+  width: 520px;
+  height: 570px;
   border-radius: 10px;
   z-index: 10000;
-  border: 0px solid rgba(255, 255, 255, .9);
-  background: rgba(255, 255, 255, .8);
+  border: 0px solid rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, .7);
 }
 html, p {
   font-family: 'Roboto', sans-serif;
@@ -45,33 +45,7 @@ html, p {
  font-size: 1.9em;
  text-align: center;
 }
-.signUpButton{
- width:220px;
- display: inline-block;
- padding: 10px 14px;
- color: rgba(255,255,255, .8);
- border: 0px solid rgba(128, 128, 128, .8);
- text-decoration: none;
- line-height: 100%;
- background-color: rgba(128, 128, 128, .8);
- border-radius: 6px;
- transition: 400ms ease;
- font-weight: normal;
- outline: none;
- cursor: pointer;
- font-size: .9em;
- margin-top: 20px;
-}
 
-.signUpButton:hover {
-  background-color:rgba(128, 128, 128, .9);
-  color: #fff;
-  border: 0px solid rgba(128, 128, 128, .9);
-}
-
-.signUpButton:active {
-
-}
 .input {
   width: 100%;
   border-top: none;
@@ -89,6 +63,7 @@ html, p {
 
 .input::placeholder {
   color: rgba(128, 128, 128, .85);
+  font-weight: lighter;
 }
 
 .input:focus {
@@ -99,7 +74,7 @@ html, p {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.7);
+    transform: scale(1.3);
   }
   100% {
     transform: scale(1);
@@ -111,25 +86,6 @@ html, p {
   align-items: center;
   justify-content: center;
   width:auto;
-}
-
-.lastNameInput{
-  width:40%;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  background-color: transparent;
-  text-align: center;
-  height: 25px;
-  font-size: 25px;
-  border-color: rgba(128, 128, 128, .7);
-  margin-top: 15px;
-  margin-bottom: 20px;
-  color: rgba(0, 0, 0, .7);
-}
-
-.lastNameInput:focus {
-  outline: none;
 }
 
 .firstNameInput{
@@ -145,8 +101,67 @@ html, p {
   margin-top: 15px;
   margin-bottom: 20px;
   color: rgba(0, 0, 0, .7);
+  font-weight: lighter;
+}
+
+.firstNameInput::placeholder {
+  color: rgba(128, 128, 128, .85);
+  font-weight: lighter;
 }
 
 .firstNameInput:focus {
   outline: none;
+}
+
+.lastNameInput{
+  width:40%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: transparent;
+  text-align: center;
+  height: 25px;
+  font-size: 25px;
+  border-color: rgba(128, 128, 128, .7);
+  margin-top: 15px;
+  margin-bottom: 20px;
+  color: rgba(0, 0, 0, .7);
+  font-weight: lighter;
+}
+
+.lastNameInput::placeholder {
+  color: rgba(128, 128, 128, .85);
+  font-weight: lighter;
+}
+
+.lastNameInput:focus {
+  outline: none;
+}
+
+.signUpButton{
+ width:220px;
+ display: inline-block;
+ padding: 10px 14px;
+ color: rgba(255,255,255, .8);
+ border: 0px solid rgba(128, 128, 128, .8);
+ text-decoration: none;
+ line-height: 100%;
+ background-color: rgba(128, 128, 128, .8);
+ border-radius: 6px;
+ transition: 400ms ease;
+ font-weight: lighter;
+ outline: none;
+ cursor: pointer;
+ font-size: .8em;
+ margin-top: 30px;
+}
+
+.signUpButton:hover {
+  background-color:rgba(128, 128, 128, 1);
+  color: #fff;
+  border: 0px solid rgba(128, 128, 128, 1);
+}
+
+.signUpButton:active {
+
 }

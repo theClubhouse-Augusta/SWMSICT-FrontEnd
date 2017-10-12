@@ -26,8 +26,8 @@ export default class SignupBox extends React.PureComponent {
         <div className="signUpContent">
           <img src={require("../../photos/signup-name.svg")}/>
           <div className="firstLast">
-            <input className="lastNameInput" type="text" name="lastName" placeholder="(Last)"></input>
-              <input className="firstNameInput" type="text" name="firstName" placeholder="(First)"></input>
+            <input className="firstNameInput" type="text" name="firstName" placeholder="First"></input>
+            <input className="lastNameInput" type="text" name="lastName" placeholder="Last"></input>
           </div>
           <img src={require("../../photos/signup-email.svg")}/>
           <input type="text" className="input" name="email" placeholder="Email"></input>

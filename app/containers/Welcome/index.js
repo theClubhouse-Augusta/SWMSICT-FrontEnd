@@ -9,7 +9,7 @@ import Helmet from 'react-helmet';
 import Navbar from 'components/Navbar';
 import SignupBox from 'components/SignupBox';
 import SignInBox from 'components/SignInBox';
-
+import WouldYouLike from 'components/WouldYouLike'
 import './style.css';
 import './styleM.css';
 
@@ -27,6 +27,7 @@ export default class Welcome extends React.PureComponent {
         <main>
           <SignInBox/>
           <SignupBox/>
+          <WouldYouLike/>
         <div className="welcomeTitle">
         <h1>
           <div>Your future</div>
