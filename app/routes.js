@@ -55,10 +55,10 @@ export default function createRoutes() {
       },
     },
     {
-     path: '/About',
-     name: 'About',
+     path: '/Submission',
+     name: 'Submission',
      getComponent(nextState, comMod) {
-       import('containers/About')
+       import('containers/Submission')
          .then(loadModule(comMod))
          .catch(errorLoading);
      },

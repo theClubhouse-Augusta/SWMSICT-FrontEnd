@@ -7,7 +7,7 @@
 }
 
 .userInfoBackground {
-  background-image: url("../../photos/placeholder.jpg");
+  background-image: url("../../photos/userinfo.jpg");
   background-size: cover;
   background-position: center center;
   display:flex;

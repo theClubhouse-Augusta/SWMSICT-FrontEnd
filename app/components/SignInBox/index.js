@@ -14,19 +14,19 @@ export default class SignInBox extends React.PureComponent {
   render() {
     return (
       <div className="signInBox">
-        <div className="label">
-          <p><strong>Log In</strong>
+        <div className="signInHeader">
+          <p> &nbsp;
             <div className="closeX">
-              <span>
                 <FaClose className="x"/>
-              </span>
             </div>
           </p>
         </div>
         <br/>
-        <div className="content">
-          Email: <input type="text" className="input" name="email"></input><br/>
-          Password: <input type="password" className="input" name="password"></input>
+        <div className="signInContent">
+          <img src={require("../../photos/login-username.svg")}/>
+          <input type="text" className="input" name="email" placeholder="Username"></input><br/>
+          <img src={require("../../photos/login-password.svg")}/>
+          <input type="password" className="input" name="password" placeholder="Password"></input>
           <br/>
           <div>
             <input type="button" value="Log In" className="logInButton"></input>

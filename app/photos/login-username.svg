@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic"
+   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px"
+   viewBox="0 0 48 48" xml:space="preserve">
+  <path transform="matrix(0.048,0,0,0.048,0,0)" stroke="none" style="fill:#666666" d="M 500 0 C 224 0 0 224 0 500 C 0 775 224 1000 500 1000 C 775 1000 1000 775 1000 500 C 1000 224 775 0 500 0 z M 500 979 C 235 979 20 764 20 500 C 20 235 235 21 500 21 C 764 21 979 235 979 500 C 979 764 764 979 500 979 z M 500 502 C 566 502 619 449 619 382 C 619 316 566 262 500 262 C 433 262 380 316 380 382 C 380 449 433 502 500 502 z M 573 514 C 551 527 526 534 500 534 C 473 534 448 527 426 514 C 332 545 265 633 265 736 L 734 736 C 734 633 667 545 573 514 z"/>
+</svg>
