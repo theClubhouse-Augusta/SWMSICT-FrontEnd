@@ -23,28 +23,43 @@ export default class Contact extends React.PureComponent {
             <h1>
               Get in Touch
             </h1>
-            <p>
-              We're Here to Support You Through Your Investing Journey
-            </p>
           </div>
           <section className="contactForm">
             <div className="contactInfo">
-              <h2>
-                Types of Funds
-              </h2>
-              <p>
-                Bacon ipsum dolor amet drumstick ham rump sirloin landjaeger tri-tip capicola prosciutto beef ribs shankle.
-              </p>
+              <label className="contactInfoEmail">
+                <img src={require("../../photos/contact-email.svg")}/>
+                <p>
+                  support@swms.com
+                </p><br/>
+              </label>
+              <label className="contactInfoPhone">
+                <img src={require("../../photos/contact-phone.svg")}/>
+                <p>
+                  (555)234-6789
+                </p><br/>
+              </label>
+              <label className="contactInfoAddress">
+                <img src={require("../../photos/contact-address.svg")}/>
+                <p>
+                  123 Wealth Ave, Augusta, GA 30901
+                </p><br/>
+              </label>
+              <label className="contactInfoSocial">
+                <img src={("../../photos/social-facebook.svg")}/>
+                <img src={("../../photos/social-twitter.svg")}/>
+                <img src={("../../photos/social-linkedin.svg")}/>
+              </label>
             </div>
             <div className="contactInput">
-              <p>Name</p>
-              <input type="text" name="contactName" maxlength="40" required/><br/>
-              <p>Email</p>
-              <input type="text" name="contactEmail" required/><br/>
-              <p>Message</p>
-              <input className="contactMessage" type="text" name="contactMessage" required/><br/>
+              <input type="text" name="contactName" maxlength="40" placeholder="Name" required/><br/>
+              <input type="text" name="contactEmail" placeholder="Email" required/><br/>
+              <textarea className="contactTextbox" cols="100" rows="5" placeholder="Inquiry">
+              </textarea>
+              <br/>
               <input type="submit" value="Submit"/>
             </div>
+          </section>
+          <section className="contactBottomBorder">
           </section>
         </main>
       </div>

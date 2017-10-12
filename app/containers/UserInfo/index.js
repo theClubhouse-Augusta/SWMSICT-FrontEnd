@@ -159,67 +159,8 @@ export default class UserInfo extends React.PureComponent {
     })
   }
 
-  
 
-  getFormData = () => {
 
-    this.setState({
-      displayOptions: []
-    });
-
-    fetch ('http://localhost:8000/api/getProducts',{
-      method: 'POST',
-      body: data
-    })
-    .then(function(response){
-      return response.json();
-    })
-    .then(function(json){
-      console.log(json.getProducts);
-      console.log(json.searchCriteria);
-      this.parseResults(json.searchCriteria);
-      this.setState({
-        getProducts:json.getProducts,
-        message:json.message,
-        messageNum:json.messageNum
-      })
-    }.bind(this))
-  }
-
-  parseResults = (data) => {
-    let displayOptions = this.state.displayOptions;
-    let riskLevel = 'Aggressive';
-
-    if (data.length > 0) {
-      if (data[0] == 1) {
-        riskLevel = 'Aggressive';
-      }
-      else if (data[0] == 2) {
-        riskLevel = 'Moderate';
-      }
-      else if (data[0] == 3) {
-        riskLevel:'Conservative';
-      }
-    }
-    let temp = '';
-    for (let x = 2; x < data.length; x++) {
-
-        if (x < data.length - 1) {
-            temp = data[x] + ', ';
-        }
-        else {
-          temp = data[x];
-        }
-
-        displayOptions.push(temp);
-
-        this.setState({
-          displayRiskLevel:riskLevel,
-          displayOptions:displayOptions,
-          displayMinInvestment:minInvestment
-        })
-    }
-  }
 
   handleContinue1 = () => {
     this.setState({

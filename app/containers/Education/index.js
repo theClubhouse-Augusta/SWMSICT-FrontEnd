@@ -32,7 +32,7 @@ export default class Education extends React.PureComponent {
           </div>
           <section className="imageBoxes">
             <label className="compoundInterestBox">
-              <img src={require("../../photos/compoundinterest.svg")}/>
+              <img src={require("../../photos/education-compoundinterest.svg")}/>
               <h2>
                 Compound Interest
               </h2>
@@ -41,7 +41,7 @@ export default class Education extends React.PureComponent {
               </p>
             </label>
             <label className="educationProductBox">
-              <img src={require("../../photos/educationProducts.svg")}/>
+              <img src={require("../../photos/education-products.svg")}/>
               <h2>
                 Types of Funds
               </h2>
@@ -50,7 +50,7 @@ export default class Education extends React.PureComponent {
               </p>
             </label>
             <label className="educationPerformanceBox">
-              <img src={require("../../photos/educationPerformance.svg")}/>
+              <img src={require("../../photos/education-performance.svg")}/>
               <h2>
                 Fund Performance
               </h2>
@@ -59,7 +59,7 @@ export default class Education extends React.PureComponent {
               </p>
             </label>
             <label className="educationExpensesBox">
-              <img src={require("../../photos/educationExpenses.svg")}/>
+              <img src={require("../../photos/education-expenses.svg")}/>
               <h2>
                 Expenses & Fees
               </h2>
@@ -111,7 +111,7 @@ export default class Education extends React.PureComponent {
           <section>
             <section className="startNowBox">
               <div className="startNowButton">
-                <img src={require("../../photos/rocket.svg")}/>
+                <img src={require("../../photos/education-rocket.svg")}/>
                 <h2>
                   Buckle Up
                 </h2><br/>

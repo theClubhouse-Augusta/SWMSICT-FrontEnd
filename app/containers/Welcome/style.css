@@ -8,9 +8,9 @@
 
 .welcomeBackground {
   background-image: url("../../photos/welcome.jpg");
-  background-size: cover;
+  /*background-size: cover;
   background-position: center center;
-  max-height: 100vh;
+  max-height: 100vh;*/
 }
 
 .welcomeTitle {

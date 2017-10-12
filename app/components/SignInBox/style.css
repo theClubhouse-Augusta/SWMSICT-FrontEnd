@@ -6,61 +6,55 @@
   margin-top:100px;
   margin-left: auto;
   margin-right: auto;
-  width: 420px;
-  height: 300px;
+  width: 380px;
+  height: 430px;
   border-radius: 10px;
   z-index: 10000;
-  border: 3px solid black;
-  background: #fafafa;
-}
+  border: 0px solid rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, .7);
+  animation-name: fadein;
+  animation-duration: 2s;
+  }
+  @-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .8; }
+  }
 html, p {
   font-family: 'Roboto', sans-serif;
 }
- .label {
-  background: #dddddd;
+/*.signInHeader {
+  background: rgba(128, 128, 128, .9);
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   border-bottom: 1px solid black;
- }
- .label p {
+}*/
+.singInHeader p {
   padding: 0 5px;
   padding-bottom: 5px;
   padding-top: 5px;
- }
- .closeX {
-   float: right;
- }
- .x {
+}
+.closeX {
+  float: right;
+}
+.x {
   font-size: 20px;
-  color:black;
- }
- .x:hover {
-   color: red;
-   animation: bounce 2s;
-   animation-iteration-count: 1;
- }
- .content {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   font-size: 25px;
- }
-.logInButton {
-  padding: 5px 10px;
-  font-size:20px;
-  border-radius: 10px;
-  border: 2px solid black;
+  color:rgba(128, 128, 128, .9);
+  margin-right: 8px;
 }
-.logInButton:focus {
-  outline: none;
+.x:hover {
+ color: rgba(128, 128, 128, .9);
+ animation: bounce 2s;
+ animation-iteration-count: 1;
 }
-.logInButton:hover {
+.signInContent {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ font-size: 1.9em;
+}
 
-}
-.logInButton:active {
-  
-}
 .input {
+  width: 80%;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -68,7 +62,15 @@ html, p {
   text-align: center;
   height: 25px;
   font-size: 25px;
-  border-color: black;
+  border-color: rgba(128, 128, 128, .7);
+  margin-top: 15px;
+  color: rgba(0, 0, 0, .7);
+  font-weight: lighter;
+}
+
+.input::placeholder {
+  color: rgba(128, 128, 128, .85);
+  font-weight: lighter;
 }
 .input:focus {
   outline: none;
@@ -78,10 +80,37 @@ html, p {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.7);
+    transform: scale(1.3);
   }
   100% {
     transform: scale(1);
 
   }
+}
+
+.logInButton{
+ width:220px;
+ display: inline-block;
+ padding: 10px 14px;
+ color: rgba(255,255,255, .8);
+ border: 0px solid rgba(128, 128, 128, .8);
+ text-decoration: none;
+ line-height: 100%;
+ background-color: rgba(128, 128, 128, .8);
+ border-radius: 6px;
+ transition: 400ms ease;
+ font-weight: lighter;
+ outline: none;
+ cursor: pointer;
+ font-size: .8em;
+}
+
+.logInButton:hover {
+  background-color:rgba(128, 128, 128, 1);
+  color: #fff;
+  border: 0px solid rgba(128, 128, 128, 1);
+}
+
+.logInButton:active {
+
 }

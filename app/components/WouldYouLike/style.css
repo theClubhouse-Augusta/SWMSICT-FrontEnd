@@ -5,38 +5,30 @@
   margin-top:100px;
   margin-left: auto;
   margin-right: auto;
-  width: 420px;
-  height: 480px;
+  width: 750px;
+  height: 380px;
   border-radius: 10px;
   z-index: 10000;
-  border: 3px solid black;
-  background: #fafafa;
+  border: 0px solid rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, .7);
 }
 html, p {
-  font-family: 'Roboto', sans-serif;
+  font-family: sans-serif;
+  font-weight: lighter;
 }
- .label {
-  background: #dddddd;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-  border-bottom: 1px solid black;
- }
- .label p {
-  padding: 0 5px;
-  padding-bottom: 5px;
-  padding-top: 5px;
- }
+
  .closeX {
    float: right;
  }
  .x {
-  font-size: 20px;
-  color:black;
+   font-size: 20px;
+   color:rgba(128, 128, 128, .9);
+   margin-right:;
  }
  .x:hover {
-   color: red;
-   animation: bounce 2s;
-   animation-iteration-count: 1;
+  color: rgba(128, 128, 128, .9);
+  animation: bounce 2s;
+  animation-iteration-count: 1;
  }
  .wouldYouLikeContent {
    display:flex;
@@ -44,15 +36,47 @@ html, p {
    align-items: center;
    text-align: center;
    padding: 10px;
-   font-size: 25px;
+   font-size: 1.6em;
+   color:rgba(102, 102, 102, 1);
+   font-weight: lighter;
  }
- .buttonBox {
+
+ .wouldYouLikeButtonBox {
    display: flex;
  }
- .button {
-   padding: 5px 10px;
-   font-size:20px;
-   border-radius: 10px;
-   border: 2px solid black;
-   margin: 5px;
+ .wouldYouLikeButton {
+   margin: 15px;
+   width:180px;
+   display: inline-block;
+   padding: 10px 14px;
+   color: rgba(255,255,255, .8);
+   border: 0px solid rgba(128, 128, 128, .8);
+   text-decoration: none;
+   line-height: 100%;
+   background-color: rgba(128, 128, 128, .8);
+   border-radius: 6px;
+   transition: 400ms ease;
+   font-weight: lighter;
+   outline: none;
+   cursor: pointer;
+   font-size: 1em;
+ }
+
+ .wouldYouLikeButton:hover {
+   background-color:rgba(128, 128, 128, 1);
+   color: #fff;
+   border: 0px solid rgba(128, 128, 128, 1);
+ }
+
+ @keyframes bounce {
+   0% {
+     transform: scale(1);
+   }
+   50% {
+     transform: scale(1.3);
+   }
+   100% {
+     transform: scale(1);
+
+   }
  }
