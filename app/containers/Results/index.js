@@ -19,7 +19,6 @@
      super();
      this.state={
        products:[]
-
      }
    }
 
@@ -41,6 +40,7 @@
        return response.json();
      })
      .then(function(json){
+       console.log('searchData');
        console.log(json.searchData);
        _this.setState ({
          searchData:json.searchData
@@ -65,6 +65,7 @@
       data.append('isIndexFund', searchData.isIndexFund);
       data.append('isRetirement', searchData.isRetirement);
 
+      console.log('data');
       console.log(searchData);
 
 
@@ -80,7 +81,9 @@
        return response.json();
      })
      .then(function(json){
+       console.log('resultProducts');
        console.log(json.resultProducts);
+       console.log('searchCriteria');
        console.log(json.searchCriteria);
        this.parseResults(json.searchCriteria);
        this.setState({
@@ -95,7 +98,7 @@
 
      let displayOptions = this.state.displayOptions;
      let minInvestment = '$' + data[1];
-     let riskLevel = 'Aggressive';
+     let riskLevel = '';
 
      if (data.length > 0) {
        if (data[0] == 1) {
@@ -138,6 +141,8 @@
    }/*End Function*/
 
    renderResults = () => {
+
+
      if(this.state.messageNum !== ''){
 
        if(this.state.messageNum == 1){
@@ -145,8 +150,9 @@
          return (
            <div>
              <div>
-             Results: {this.state.getProducts.length}<br/><br/>
-               You searched on: Risk level ({this.state.displayRiskLevel}), Minimum investment ({this.state.displayMinInvestment})
+             Results: {this.state.getProducts.length}<br/>
+             <br/>
+               You searched on: Risk level ({this.state.riskLevel}), Minimum investment ({this.state.displayMinInvestment})
              </div>
              <div>
                Products: {options}<br/><br/>
