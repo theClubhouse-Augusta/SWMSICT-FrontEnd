@@ -221,13 +221,7 @@ export default class UserInfo extends React.PureComponent {
         </header>
 
 
-        <main>here: {this.state.minInvestment} / {this.state.riskLevel} <br/>
-        Stocks:{this.state.isStock}<br/>
-        Bonds:{this.state.isBond}<br/>
-        MF:{this.state.isMutualFund}<br/>
-        ETF:{this.state.isETF}<br/>
-        Retirement:{this.state.isRetirement}<br/>
-        Index Funds:{this.state.isIndexFund}<br/>
+        <main>
 
 
           {this.renderUserInfoContribution()}

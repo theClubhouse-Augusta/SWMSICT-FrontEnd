@@ -18,9 +18,12 @@
    constructor(){
      super();
      this.state={
-       products:[]
+       products:[],
+       type: 'name',
+       order: 'asc'
      }
    }
+
 
 
    componentWillMount() {
@@ -30,6 +33,7 @@
    getSearchData = () => {
      let data = new FormData();
      let _this = this;
+
      data.append('userID', 1);
 
      fetch ('http://localhost:8000/api/collectSearchData',{
@@ -45,13 +49,14 @@
        _this.setState ({
          searchData:json.searchData
        }, function() {
-         _this.getProducts(json.searchData);
+         _this.getProducts(json.searchData, this.state.type, this.state.order);
        })
      }.bind(this))
    }
 
 
-   getProducts = (searchData, type = 'name', order = 'desc') => {
+   getProducts = (searchData, type = 'name', order = 'asc', physLoc = '0', specOff = '0') => {
+
      let data = new FormData();
      searchData = searchData[0];
 
@@ -65,6 +70,7 @@
       data.append('isIndexFund', searchData.isIndexFund);
       data.append('isRetirement', searchData.isRetirement);
 
+
       console.log('data');
       console.log(searchData);
 
@@ -73,7 +79,7 @@
        displayOptions: []
      });
 
-     fetch ('http://localhost:8000/api/getProducts?type='+type+'&order='+order,{
+     fetch ('http://localhost:8000/api/getProducts/'+type+'/'+order+'/'+physLoc+'/'+specOff,{
        method: 'POST',
        body: data
      })
@@ -91,6 +97,7 @@
          message:json.message,
          messageNum:json.messageNum
        })
+       this.forceUpdate();
      }.bind(this))
    }
 
@@ -132,14 +139,6 @@
    }
 
 
-   sortResultsByKey = (array, key) => {
-     return array.sort(function(a, b){
-       let x = a[key];
-       let y = b[key];
-       return((x < y) ? -1 : 0);
-     })
-   }/*End Function*/
-
    renderResults = () => {
 
 
@@ -162,7 +161,7 @@
                    <div>
                    <div><h3>{product.name}</h3></div>
                    <div><h4>{product.summary}</h4></div>
-                   <span>Risk level: {product.riskLevel} </span><span>Minimum investment: ${product.minInvestment} </span><span>Type of investment: {product.isStock}</span>
+                   <span>Risk level: {product.riskLevel} </span><span>Minimum investment: ${product.minInvestment} </span><span>Type of investment: {product.isStock} / Fees: {product.fees} / Perf: {product.performance} {product.physicalLocationAvailable} {product.specialOffersAvailable}</span>
                    <div><br/><br/></div>
                    </div>
 
@@ -190,6 +189,38 @@
      }
    }
 
+   filterByFee = (event) => {
+     if(event.target.value == 1) {
+      this.getProducts(this.state.searchData, 'fees', 'asc', '0', '0');
+     }
+     else {
+       this.getProducts(this.state.searchData, 'fees', 'desc', '0', '0');
+     }
+   }
+   filterByPerformance = (event) => {
+     if(event.target.value == 1) {
+      this.getProducts(this.state.searchData, 'performance', 'asc', '0', '0');
+     }
+     else {
+       this.getProducts(this.state.searchData, 'performance', 'desc', '0', '0');
+     }
+   }
+   filterByLocations = (event) => {
+     if(event.target.value == 1){
+       this.getProducts(this.state.searchData, 'name', 'asc', '1', '0');
+     }
+     else {
+       this.getProducts(this.state.searchData, 'name', 'asc', '0', '0');
+     }
+   }
+   filterBySpecOff = (event) => {
+     if(event.target.value == 1){
+       this.getProducts(this.state.searchData, 'name', 'asc', '0', '1');
+     }
+     else {
+       this.getProducts(this.state.searchData, 'name', 'asc', '0', '0');
+     }
+   }
 
 
    render() {
@@ -203,59 +234,91 @@
 
          <main>
 
-           <h1 className="openingHeader">Results Page</h1>
+         <h1 className="openingHeader">Results Page</h1>
 
-           <div className="mobileWrapper">
-             <div className="choicesWrapper">
-               <h2 className="choicesHeader1">Sort Data By:</h2>
-               <h3 className="choicesHeader2"> Fees </h3>
-               <h3 className="choicesHeader3"> Performance </h3>
-               <div className="choicesWrapperSub1">
-                 <h3 className="choicesHeader4">Special Offers</h3>
-                 <h3 className="choicesHeader5">Physical Location</h3>
+         <div className="selectWrapper">
+           <select className="selectFees" onChange={this.filterByFee}>
+             <optgroup label="Sort by: Fees">
+               <option value="1">Low to High</option>
+               <option value="2">High to Low</option>
+             </optgroup>
+          </select>
+
+          <select className="selectPerformance" onChange={this.filterByPerformance}>
+             <optgroup label="Sort by: Performance">
+               <option value="1">Low to High</option>
+               <option value="2">High to Low</option>
+               </optgroup>
+           </select>
+
+           <select onChange={this.filterByLocations}>
+              <option value="" selected>Location</option>
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+            <select onChange={this.filterBySpecOff}>
+            <option value="" selected>Special offers</option>
+               <option value="1">Yes</option>
+               <option value="0">No</option>
+             </select>
+         </div>
+
+         {/*}<div className="mobileWrapper">
+           <div className="choicesWrapper">
+             <h2 className="choicesHeader1">Sort Data By:</h2>
+             <h3 className="choicesHeader2"> Fees </h3>
+             <h3 className="choicesHeader3"> Performance </h3>
+             <div className="choicesWrapperSub1">
+               <h3 className="choicesHeader4">Special Offers</h3>
+               <h3 className="choicesHeader5">Physical Location</h3>
+             </div>
+           </div>{/*End className "choicesWrapper"*/}
+
+           {/*}<div className="inputWrapper">
+
+             <h3 className="inputHeader1"></h3>
+
+             <h3 className="inputHeader2">
+               <div className="content">
+                 <input type="button" onClick={() => this.getProducts(this.state.searchData, 'name', 'desc')} />
+                 <input type="checkBox" onChange={this.handlePassword}/>High-Low
+                 <input type="checkBox" onChange={this.handlePassword}/>Low-High
                </div>
-             </div>{/*End className "choicesWrapper"*/}
+             </h3>
 
-             <div className="inputWrapper">
+             <h3 className="inputHeader3">
+               <div className="content">
+                 <input type="checkBox" onChange={this.handlePassword}/>High-Low
+                 <input type="checkBox" onChange={this.handlePassword}/>Low-High
+               </div>
+             </h3>
 
-               <h3 className="inputHeader1"></h3>
-
-               <h3 className="inputHeader2">
+             <div className="inputWrapperSub1">
+               <h3 className="inputHeader4">
                  <div className="content">
-                  <input type="button" onClick={() => this.getProducts(this.state.searchData, 'name', 'desc')} />
-                   <input type="checkBox" onChange={this.handlePassword}/>High-Low
-                   <input type="checkBox" onChange={this.handlePassword}/>Low-High
+                   <input type="checkBox" onChange={this.handlePassword}/>Yes
                  </div>
                </h3>
 
-               <h3 className="inputHeader3">
+               <h3 className="inputHeader5">
                  <div className="content">
-                   <input type="checkBox" onChange={this.handlePassword}/>High-Low
-                   <input type="checkBox" onChange={this.handlePassword}/>Low-High
+                   <input type="checkBox" onChange={this.handlePassword}/>Yes
                  </div>
                </h3>
+             </div>{/*End className "inputWrapperSub1"*/}
+           {/*}</div>{/*End className "inputWrapper"*/}
+         {/*}</div> {/*End className "mobileWrapper"*/}
 
-               <div className="inputWrapperSub1">
-                 <h3 className="inputHeader4">
-                   <div className="content">
-                     <input type="checkBox" onChange={this.handlePassword}/>Yes
-                   </div>
-                 </h3>
-
-                 <h3 className="inputHeader5">
-                   <div className="content">
-                     <input type="checkBox" onChange={this.handlePassword}/>Yes
-                   </div>
-                 </h3>
-               </div>{/*End className "inputWrapperSub1"*/}
-             </div>{/*End className "inputWrapper"*/}
-           </div> {/*End className "mobileWrapper"*/}
-
-           <div className="resultsPage">
-             <div className="productSummary">
+         <div className="resultsPage">
 
 
-             {this.renderResults()}
+           <div className="productSummary">
+             This is where the Product Summary will be.
+
+
+           {this.renderResults()}
+
+
 
 
 
