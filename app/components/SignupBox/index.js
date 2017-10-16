@@ -30,11 +30,11 @@ export default class SignupBox extends React.PureComponent {
             <input className="lastNameInput" type="text" name="lastName" placeholder="Last"></input>
           </div>
           <img src={require("../../photos/signup-email.svg")}/>
-          <input type="text" className="input" name="email" placeholder="Email"></input>
+          <input type="text" className="signUpInput" name="email" placeholder="Email"></input>
           <img src={require("../../photos/signup-phone.svg")}/>
-          <input type="text" className="input" name="phone" placeholder="Phone"></input>
+          <input type="text" className="signUpInput" name="phone" placeholder="Phone"></input>
           <img src={require("../../photos/signup-password.svg")}/>
-          <input type="password" className="input" name="password" placeholder="Password"></input>
+          <input type="password" className="signUpInput" name="password" placeholder="Password"></input>
           <div>
             <input type="button" value="Create Account" className="signUpButton"></input>
           </div>

@@ -48,7 +48,6 @@ export default class Navbar extends React.PureComponent {
     }
   }
 
-
   render() {
     return (
       <div>
@@ -62,6 +61,8 @@ export default class Navbar extends React.PureComponent {
             <Link to="/Education" className="navButton">LEARN</Link>
             <Link to="/Services" className="navButton">SERVICES</Link>
             <Link to="/Contact" className="navButton">CONTACT</Link>
+            <Link to="/Results" className="navButton">RESULTS</Link>
+            <Link to="/Logout" className="navButton">LOGOUT</Link>
           </div>
           <Bars className="menuIcon" onClick={this.handleMenu}/>
         </nav>

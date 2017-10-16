@@ -16,16 +16,9 @@
 }
 
 .educationBanner h1 {
-  font-size: 5.5em;
+  font-size: 7.5em;
   text-align: center;
   margin-top: 140px;
-  color: rgba(248,250,242,.8);
-}
-
-.educationBanner p {
-  font-size: 2em;
-  text-align: center;
-  margin-top: 10px;
   color: rgba(248,250,242,.8);
   animation-name: fadein;
   animation-duration: 4s;
@@ -33,6 +26,13 @@
 @-webkit-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: .8; }
+}
+
+.educationBanner p {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 10px;
+  color: rgba(248,250,242,.8);
 }
 
 .imageBoxes {
@@ -55,7 +55,7 @@
   color: rgba(248,250,242,.8);
 }
 .compoundInterestBox {
-  margin-left: 200px;
+  margin-left: 125px;
 }
 
 .compoundInterestBox h2 {
@@ -64,7 +64,7 @@ margin-bottom: 10px;
 }
 
 .educationProductBox {
-  margin-left: 100px;
+  margin-left: 70px;
 }
 
 .educationProductBox h2 {
@@ -73,7 +73,7 @@ margin-bottom: 10px;
 }
 
 .educationPerformanceBox {
-  margin-left: 100px;
+  margin-left: 70px;
 }
 
 .educationPerformanceBox h2 {
@@ -82,8 +82,8 @@ margin-bottom: 10px;
 }
 
 .educationExpensesBox {
-  margin-left: 100px;
-  margin-right: 200px;
+  margin-left: 70px;
+  margin-right: 125px;
 }
 
 .educationExpensesBox h2 {
@@ -101,8 +101,8 @@ margin-bottom: 10px;
 
 .educationInfo {
   font-size: 1.4em;
-  color: #2F2D3A;
-  background-color:#ddd;
+  color: rgba(47, 54, 80,.8);
+  background-color:rgba(229,176,144,.2);
   padding-left:200px;
   padding-right:200px;
   padding-top: 60px;
@@ -138,11 +138,11 @@ margin-bottom: 10px;
 	padding: 10px 14px;
   margin: 40px;
 	color: rgba(255,255,255,1);
-	border: 0px solid rgba(209, 118, 27, 1);
+	border: 0px solid rgba(229,176,144, 1);
 	text-decoration: none;
 	font-size: 1.1em;
 	line-height: 130%;
-	background-color: rgba(209, 118, 27, .7);
+	background-color: rgba(229,176,144, .7);
 	border-radius: 6px;
 	transition: 400ms ease;
   font-weight: normal;
@@ -151,7 +151,7 @@ margin-bottom: 10px;
 }
 
 .startNowButton input[type="button"]:hover {
-  background-color:rgba(209, 118, 27, 1);
+  background-color:rgba(229,176,144, 1);
 	color: rgba(255,255,255,1);
-  border: 0 solid rgba(209, 118, 27, 1);
+  border: 0 solid rgba(229,176,144, 1);
 }

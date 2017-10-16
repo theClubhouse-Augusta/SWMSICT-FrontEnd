@@ -25,9 +25,6 @@ export default class Welcome extends React.PureComponent {
           <Navbar/>
         </header>
         <main>
-          <SignInBox/>
-          <SignupBox/>
-          <WouldYouLike/>
         <div className="welcomeTitle">
         <h1>
           <div>Your future</div>

@@ -30,6 +30,7 @@
   animation-name: fadein;
   animation-duration: 3s;
 }
+
 @-webkit-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: .8; }
@@ -94,9 +95,15 @@ margin-bottom: 10px;
 .servicesInfo {
   font-size: 1.4em;
   color: rgba(50, 51,70,1);
-  background-color:#ddd;
+  background-color:rgba(238,188,165,.5);
   padding-left:200px;
   padding-right:200px;
   padding-top: 90px;
   padding-bottom: 90px;
+}
+
+.servicesInfo h2 {
+  text-align: center;
+  color: rgba(50, 51,70,.8);
+  font-size: 1.8em;
 }
