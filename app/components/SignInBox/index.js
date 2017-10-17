@@ -14,8 +14,8 @@ export default class SignInBox extends React.PureComponent {
   constructor(){
     super();
     this.state = {
-      email: null,
-      password: null
+      email: "",
+      password: ""
     }
   };
   handleEmail=(event)=> {
@@ -66,33 +66,43 @@ export default class SignInBox extends React.PureComponent {
       sessionStorage.setItem('firstName', JSON.stringify(json.firstName));
       sessionStorage.setItem('userID', JSON.stringify(json.id));
       alert("token created, information stored to session");
+      _this.context.router.push("/Results");
     })
   };
   render() {
-    return (
-      <div className="signInBox">
-        <div className="signInHeader">
-          <p> &nbsp;
-            <div className="closeX">
-                <FaClose className="x"/>
-            </div>
-          </p>
-        </div>
-        <br/>
-        <div className="signInContent">
-          <img src={require("../../photos/login-username.svg")}/>
-          <input type="text" className="input" name="email" placeholder="Username" onChange={this.handleEmail}></input><br/>
-          <img src={require("../../photos/login-password.svg")}/>
-          <input type="password" className="input" name="password" placeholder="Password" onChange={this.handlePassword}></input>
+    if(this.props.openSignIn === true)
+    {
+      return (
+        <div className="signInBox">
+          <div className="signInHeader">
+            <p> &nbsp;
+              <div className="closeX">
+                  <FaClose className="x" onClick={this.props.toggleSignIn}/>
+              </div>
+            </p>
+          </div>
           <br/>
-          <div>
-            <input type="button" value="Log In" className="logInButton" onClick={this.signIn}></input>
+          <div className="signInContent">
+            <img src={require("../../photos/login-username.svg")}/>
+            <input type="text" className="input" name="email" placeholder="Email" onChange={this.handleEmail}></input><br/>
+            <img src={require("../../photos/login-password.svg")}/>
+            <input type="password" className="input" name="password" placeholder="Password" onChange={this.handlePassword}></input>
+            <br/>
+            <div>
+              <input type="button" value="Log In" className="logInButton" onClick={this.signIn}></input>
+            </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    }
+    else {
+     return(
+       <div></div>
+     );
+    }
   }
 }
+
 
 SignInBox.contextTypes = {
   router: React.PropTypes.object

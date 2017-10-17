@@ -11,16 +11,31 @@ import './style.css';
 import './styleM.css';
 
 export default class SignupBox extends React.PureComponent {
+
   constructor(){
     super();
     this.state = {
-      firstName: null,
-      lastName: null,
-      email: null,
-      phoneNumber: null,
-      password: null
+      firstName: "",
+      lastName: "",
+      email: "",
+      phoneNumber: "",
+      password: ""
     }
   };
+  getSessionData = () => {
+    let data = {};
+    data.userID = 1;
+    data.minInvestment = sessionStorage.getItem('minInvestment');
+    data.riskLevel = sessionStorage.getItem('riskLevel');
+    data.isStock = sessionStorage.getItem('isStock');
+    data.isBond = sessionStorage.getItem('isBond');
+    data.isMutualFund = sessionStorage.getItem('isMutualFund');
+    data.isETF = sessionStorage.getItem('isETF');
+    data.isIndexFund = sessionStorage.getItem('isIndexFund');
+    data.isRetirement = sessionStorage.getItem('isRetirement');
+
+    return data;
+  }
   handleFirstName = (event) => {
     this.setState({
       firstName: event.target.value
@@ -69,7 +84,7 @@ export default class SignupBox extends React.PureComponent {
       }
       else if(json.error === 'Username Unavailable')
       {
-        alert("username unavailable");
+        alert("email unavailable");
       }
       else if(json.success)
       {
@@ -120,34 +135,40 @@ export default class SignupBox extends React.PureComponent {
   };
 
   render() {
-    return (
-      <div className="signUpBox">
-        <div className="signUpHeader">
-          <p> &nbsp;
+    if(this.props.openSignUp === true)
+    {
+      return (
+        <div className="signUpBox">
+          <div className="signUpHeader">
             <div className="closeX">
-                <FaClose className="x"/>
+              <p>
+                  <FaClose className="x" onClick={this.props.toggleSignUp}/>
+              </p>
             </div>
-          </p>
-        </div>
-        <br/>
-        <div className="signUpContent">
-          <img src={require("../../photos/signup-name.svg")}/>
-          <div className="firstLast">
-            <input className="firstNameInput" type="text" name="firstName" placeholder="First" onChange={this.handleFirstName}></input>
-            <input className="lastNameInput" type="text" name="lastName" placeholder="Last" onChange={this.handleLastName}></input>
           </div>
-          <img src={require("../../photos/signup-email.svg")}/>
-          <input type="text" className="input" name="email" placeholder="Email" onChange={this.handleEmail}></input>
-          <img src={require("../../photos/signup-phone.svg")}/>
-          <input type="text" className="input" name="phone" placeholder="Phone"  onChange={this.handlePhoneNumber}></input>
-          <img src={require("../../photos/signup-password.svg")}/>
-          <input type="password" className="input" name="password" placeholder="Password" onChange={this.handlePassword}></input>
-          <div>
-            <input type="button" value="Create Account" className="signUpButton" onClick={this.signUp}></input>
+          <br/>
+          <div className="signUpContent">
+            <img src={require("../../photos/signup-name.svg")}/>
+            <input className="signUpInput" type="text" name="firstName" placeholder="First" onChange={this.handleFirstName}></input>
+            <input className="signUpInput" type="text" name="lastName" placeholder="Last" onChange={this.handleLastName}></input>
+            <img src={require("../../photos/signup-email.svg")}/>
+            <input type="text" className="signUpInput" name="email" placeholder="Email" onChange={this.handleEmail}></input>
+            <img src={require("../../photos/signup-phone.svg")}/>
+            <input type="text" className="signUpInput" name="phone" placeholder="Phone"  onChange={this.handlePhoneNumber}></input>
+            <img src={require("../../photos/signup-password.svg")}/>
+            <input type="password" className="signUpInput" name="password" placeholder="Password" onChange={this.handlePassword}></input>
+            <div>
+              <input type="button" value="Create Account" className="signUpButton" onClick={this.signUp}></input>
+            </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    }
+    else {
+     return(
+       <div></div>
+     )
+    }
   }
 }
 

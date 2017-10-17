@@ -20,6 +20,8 @@ export default class UserInfoProducts extends React.PureComponent {
     }
   }
 
+
+
   renderStocksCheck = () => {
     if(this.state.showStocksCheck === true) {
       return(
@@ -107,7 +109,8 @@ export default class UserInfoProducts extends React.PureComponent {
         <div className="userInfoProducts">
           <h1>
             <div>Which investment products</div>
-            <div>interest you?</div>
+            <div>interest you?
+            </div>
           </h1>
           <div className="checkboxContainer">
             <div className="columnOne">

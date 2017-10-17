@@ -49,23 +49,26 @@ export default class UserInfo extends React.PureComponent {
     this.setState ({
       minInvestment:document.getElementById('dollar').value
     })
+    sessionStorage.setItem('minInvestment', document.getElementById('dollar').value);
   }
-
   handleRiskLevel = (event) => {
     this.setState ({
       riskLevel:event.target.value
     })
+    sessionStorage.setItem('riskLevel', event.target.value);
   }
   handleStocks = (event) => {
     if (this.state.isStock == 0) {
       this.setState ({
         isStock: 1
       })
+      sessionStorage.setItem('isStock', 1);
     }
     else {
       this.setState({
         isStock: 0
       })
+      sessionStorage.setItem('isStock', 0);
     }
   }
 
@@ -74,11 +77,13 @@ export default class UserInfo extends React.PureComponent {
       this.setState ({
         isBond: 1
       })
+      sessionStorage.setItem('isBond', 1);
     }
     else {
       this.setState({
         isBond: 0
       })
+      sessionStorage.setItem('isBond', 0);
     }
   }
 
@@ -87,24 +92,27 @@ export default class UserInfo extends React.PureComponent {
       this.setState ({
         isMutualFund: 1
       })
+      sessionStorage.setItem('isMutualFund', 1);
     }
     else {
       this.setState({
         isMutualFund: 0
       })
+      sessionStorage.setItem('isMutualFund', 0);
     }
   }
-
   handleExTradeFunds = (event) => {
     if (this.state.isETF == 0) {
       this.setState ({
         isETF: 1
       })
+      sessionStorage.setItem('isETF', 1);
     }
     else {
       this.setState({
         isETF: 0
       })
+      sessionStorage.setItem('isETF', 0);
     }
   }
 
@@ -113,11 +121,13 @@ export default class UserInfo extends React.PureComponent {
       this.setState ({
         isIndexFund: 1
       })
+      sessionStorage.setItem('isIndexFund', 1);
     }
     else {
       this.setState({
         isIndexFund: 0
       })
+      sessionStorage.setItem('isIndexFund', 0);
     }
   }
 
@@ -126,11 +136,13 @@ export default class UserInfo extends React.PureComponent {
       this.setState ({
         isRetirement: 1
       })
+      sessionStorage.setItem('isRetirement', 1);
     }
     else {
       this.setState({
         isRetirement: 0
       })
+      sessionStorage.setItem('isRetirement', 0);
     }
   }
 

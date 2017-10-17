@@ -19,17 +19,26 @@
      super();
      this.state={
        products:[],
+       showWouldYouLike: true,
+       showSignUp: false,
        type: 'name',
        order: 'asc'
      }
    }
-
-
-
    componentWillMount() {
      this.getSearchData();
    }
-
+   closeWouldYouLike = () => {
+     this.setState({
+       showWouldYouLike: !this.state.showWouldYouLike
+     })
+   }
+   toggleSignUp = () => {
+     this.setState({
+       showWouldYouLike: false,
+       showSignUp: !this.state.showSignUp
+     })
+   }
    getSearchData = () => {
      let data = new FormData();
      let _this = this;
@@ -56,11 +65,11 @@
 
 
    getProducts = (searchData, type = 'name', order = 'asc', physLoc = '0', specOff = '0') => {
-
+     let _this = this;
      let data = new FormData();
      searchData = searchData[0];
 
-      data.append('userID', searchData.userID);
+      data.append('userID', 1);
       data.append('minInvestment', searchData.minInvestment);
       data.append('riskLevel', searchData.riskLevel);
       data.append('isStock', searchData.isStock);
@@ -91,13 +100,13 @@
        console.log(json.resultProducts);
        console.log('searchCriteria');
        console.log(json.searchCriteria);
-       this.parseResults(json.searchCriteria);
-       this.setState({
+       _this.parseResults(json.searchCriteria);
+       _this.setState({
          getProducts:json.resultProducts,
          message:json.message,
          messageNum:json.messageNum
        })
-       this.forceUpdate();
+       _this.forceUpdate();
      }.bind(this))
    }
 
@@ -137,11 +146,7 @@
          })
      }
    }
-
-
    renderResults = () => {
-
-
      if(this.state.messageNum !== ''){
 
        if(this.state.messageNum == 1){
@@ -184,172 +189,113 @@
          )
        }
        else {
-         return "";
+         return (
+           <div></div>
+         );
        }
      }
    }
-
    filterByFee = (event) => {
-     if(event.target.value == 1) {
-      this.getProducts(this.state.searchData, 'fees', 'asc', '0', '0');
-     }
-     else {
-       this.getProducts(this.state.searchData, 'fees', 'desc', '0', '0');
-     }
-   }
-   filterByPerformance = (event) => {
-     if(event.target.value == 1) {
-      this.getProducts(this.state.searchData, 'performance', 'asc', '0', '0');
-     }
-     else {
-       this.getProducts(this.state.searchData, 'performance', 'desc', '0', '0');
-     }
-   }
-   filterByLocations = (event) => {
-     if(event.target.value == 1){
-       this.getProducts(this.state.searchData, 'name', 'asc', '1', '0');
-     }
-     else {
-       this.getProducts(this.state.searchData, 'name', 'asc', '0', '0');
-     }
-   }
-   filterBySpecOff = (event) => {
-     if(event.target.value == 1){
-       this.getProducts(this.state.searchData, 'name', 'asc', '0', '1');
-     }
-     else {
-       this.getProducts(this.state.searchData, 'name', 'asc', '0', '0');
-     }
-   }
+    if(event.target.value == 1) {
+     this.getProducts(this.state.searchData, 'fees', 'asc', '0', '0');
+    }
+    else {
+      this.getProducts(this.state.searchData, 'fees', 'desc', '0', '0');
+    }
+  }
+  filterByPerformance = (event) => {
+    if(event.target.value == 1) {
+     this.getProducts(this.state.searchData, 'performance', 'asc', '0', '0');
+    }
+    else {
+      this.getProducts(this.state.searchData, 'performance', 'desc', '0', '0');
+    }
+  }
+  filterByLocations = (event) => {
+    if(event.target.value == 1){
+      this.getProducts(this.state.searchData, 'name', 'asc', '1', '0');
+    }
+    else {
+      this.getProducts(this.state.searchData, 'name', 'asc', '0', '0');
+    }
+  }
+  filterBySpecOff = (event) => {
+    if(event.target.value == 1){
+      this.getProducts(this.state.searchData, 'name', 'asc', '0', '1');
+    }
+    else {
+      this.getProducts(this.state.searchData, 'name', 'asc', '0', '0');
+    }
+  }
+  render() {
+    return (
+      <div className="container resultsBackground">
+        <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
 
+        <header>
+          <Navbar/>
+        </header>
 
-   render() {
-     return (
-       <div className="container resultsContainer">
-         <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
+	       <WouldYouLike closeWouldYouLike={this.closeWouldYouLike} 	toggleSignUp={this.toggleSignUp} openWouldYouLike={this.state.showWouldYouLike}/>
+         <SignupBox toggleSignUp={this.toggleSignUp} openSignUp={this.state.showSignUp}/>
 
-         <header>
-           <Navbar/>
-         </header>
+        <main>
+          <section className="resultsBanner">
+            <h1>
+              Search Results
+            </h1>
+            <p>
+              The following investment products have been curated with your goals in mind.
+            </p>
+            <p>
+              Use the filters below to further refine your results.
+            </p>
+          </section>
 
-         <main>
+          <div className="resultsFilters">
+            <div className="feesFilter">
+              <select>
+                <option value="" disabled selected>Fees & Expenses</option>
+                <option value="1">High to Low</option>
+                <option value="2">Low to High</option>
+              </select>
+            </div>
+            <div className="performanceFilter">
+              <select>
+                <option value="" disabled selected>Performance</option>
+                  <option value="1">High to Low</option>
+                  <option value="2">Low to High</option>
+              </select>
+            </div>
+            <div className="specialOffersFilter">
+              <select>
+                <option value="" disabled selected>Special Offers</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+            <div className="locationFilter" default="SpecialOffers">
+              <select>
+                <option value="" disabled selected>Physical Location</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+          <div className="resultBox">
+            <div className="result">
+              <div className="companyTitle"></div>
+              <div className="productName"></div>
+              <div className="resultDescription"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+      {this.renderResults()}
+    </div>
+    );
+  }
+}
 
-         <h1 className="openingHeader">Results Page</h1>
-
-         <div className="selectWrapper">
-           <select className="selectFees" onChange={this.filterByFee}>
-             <optgroup label="Sort by: Fees">
-               <option value="1">Low to High</option>
-               <option value="2">High to Low</option>
-             </optgroup>
-          </select>
-
-          <select className="selectPerformance" onChange={this.filterByPerformance}>
-             <optgroup label="Sort by: Performance">
-               <option value="1">Low to High</option>
-               <option value="2">High to Low</option>
-               </optgroup>
-           </select>
-
-           <select onChange={this.filterByLocations}>
-              <option value="" selected>Location</option>
-              <option value="1">Yes</option>
-              <option value="0">No</option>
-            </select>
-            <select onChange={this.filterBySpecOff}>
-            <option value="" selected>Special offers</option>
-               <option value="1">Yes</option>
-               <option value="0">No</option>
-             </select>
-         </div>
-
-         {/*}<div className="mobileWrapper">
-           <div className="choicesWrapper">
-             <h2 className="choicesHeader1">Sort Data By:</h2>
-             <h3 className="choicesHeader2"> Fees </h3>
-             <h3 className="choicesHeader3"> Performance </h3>
-             <div className="choicesWrapperSub1">
-               <h3 className="choicesHeader4">Special Offers</h3>
-               <h3 className="choicesHeader5">Physical Location</h3>
-             </div>
-           </div>{/*End className "choicesWrapper"*/}
-
-           {/*}<div className="inputWrapper">
-
-             <h3 className="inputHeader1"></h3>
-
-             <h3 className="inputHeader2">
-               <div className="content">
-                 <input type="button" onClick={() => this.getProducts(this.state.searchData, 'name', 'desc')} />
-                 <input type="checkBox" onChange={this.handlePassword}/>High-Low
-                 <input type="checkBox" onChange={this.handlePassword}/>Low-High
-               </div>
-             </h3>
-
-             <h3 className="inputHeader3">
-               <div className="content">
-                 <input type="checkBox" onChange={this.handlePassword}/>High-Low
-                 <input type="checkBox" onChange={this.handlePassword}/>Low-High
-               </div>
-             </h3>
-
-             <div className="inputWrapperSub1">
-               <h3 className="inputHeader4">
-                 <div className="content">
-                   <input type="checkBox" onChange={this.handlePassword}/>Yes
-                 </div>
-               </h3>
-
-               <h3 className="inputHeader5">
-                 <div className="content">
-                   <input type="checkBox" onChange={this.handlePassword}/>Yes
-                 </div>
-               </h3>
-             </div>{/*End className "inputWrapperSub1"*/}
-           {/*}</div>{/*End className "inputWrapper"*/}
-         {/*}</div> {/*End className "mobileWrapper"*/}
-
-         <div className="resultsPage">
-
-
-           <div className="productSummary">
-             This is where the Product Summary will be.
-
-
-           {this.renderResults()}
-
-
-
-
-
-
-
-
-
-
-
-
-             </div>
-             /*<div className="todoList">
-             {this.state.products.map((product, index) => (
-               <div className="listItem" key={index} >{product.name} {product.content}{product.fundPerformance}
-               </div>
-             ))}
-           </div>*/
-           </div>{/*End className "resultsPage"*/}
-
-
-
-
-
-         </main>
-
-
-       </div>
-     );
-   }
- }
-
- Results.contextTypes = {
-   router: React.PropTypes.object
- };
+Results.contextTypes = {
+  router: React.PropTypes.object
+};
