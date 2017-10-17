@@ -1,5 +1,14 @@
 /* UserInfo Styles */
 
+.divTest {
+  border: 2px solid #000;
+  width: 10px;
+  height: 10px;
+}
+.divTest {
+  border: 1px solid #f00;
+}
+
 .container {
   display:flex;
   flex-direction:column;
