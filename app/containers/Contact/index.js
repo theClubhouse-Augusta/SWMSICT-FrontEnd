@@ -29,25 +29,26 @@ export default class Contact extends React.PureComponent {
               <label className="contactInfoEmail">
                 <img src={require("../../photos/contact-email.svg")}/>
                 <p>
-                  support@swms.com
-                </p><br/>
-              </label>
-              <label className="contactInfoPhone">
-                <img src={require("../../photos/contact-phone.svg")}/>
-                <p>
-                  (555)234-6789
+                  finsolutions@swms.com
                 </p><br/>
               </label>
               <label className="contactInfoAddress">
                 <img src={require("../../photos/contact-address.svg")}/>
                 <p>
-                  123 Wealth Ave, Augusta, GA 30901
+                540 Telfair St, Augusta, GA 30901
+                </p><br/>
+              </label>
+              <label className="contactInfoPhone">
+                <img src={require("../../photos/contact-phone.svg")}/>
+                <p>
+                  Toll-Free: 1-619-555-0978
                 </p><br/>
               </label>
               <label className="contactInfoSocial">
-                <img src={("../../photos/social-facebook.svg")}/>
-                <img src={("../../photos/social-twitter.svg")}/>
-                <img src={("../../photos/social-linkedin.svg")}/>
+                <img src={require("../../photos/contact-social-facebook.svg")}/>
+                <img src={require("../../photos/contact-social-twitter.svg")}/>
+                <img src={require("../../photos/contact-social-youtube.svg")}/>
+                <img src={("../../photos/contact-social-linkedin.svg")}/>
               </label>
             </div>
             <div className="contactInput">

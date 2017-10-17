@@ -5,7 +5,7 @@
   margin-top:100px;
   margin-left: auto;
   margin-right: auto;
-  width: 520px;
+  width: 450px;
   height: 570px;
   border-radius: 10px;
   z-index: 10000;
@@ -44,9 +44,11 @@ html, p {
  align-items: center;
  font-size: 1.9em;
  text-align: center;
+ padding-left:30px;
+ padding-right:30px;
 }
 
-.input {
+.signUpInput {
   width: 100%;
   border-top: none;
   border-left: none;
@@ -61,12 +63,12 @@ html, p {
   color: rgba(0, 0, 0, .7);
 }
 
-.input::placeholder {
+.signUpInput::placeholder {
   color: rgba(128, 128, 128, .85);
   font-weight: lighter;
 }
 
-.input:focus {
+.signUpInput:focus {
   outline: none;
 }
 @keyframes bounce {
@@ -83,13 +85,14 @@ html, p {
 }
 
 .firstLast {
+  display:flex;
+  width:100%;
   align-items: center;
   justify-content: center;
-  width:auto;
 }
 
 .firstNameInput{
-  width: auto;
+  width: 50%;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -114,7 +117,7 @@ html, p {
 }
 
 .lastNameInput{
-  width:40%;
+  width:50%;
   border-top: none;
   border-left: none;
   border-right: none;

@@ -1,162 +1,96 @@
 /* Home Styles */
-
 .container {
   display:flex;
   flex-direction:column;
-  background:#AAAAAA;
   min-height:100vh;
-
 }
 
-.content {
-  display: flex;
-  flex-direction: row;
-  float: left;
-  width:60%;
-  margin-bottom: 5px;
-  text-align: left;
-  align-items: left;
-}
-
-.filters {
-  min-height: 300px;
-  background: #FF0000;
-  margin-top: 15px;
-  margin-right: 15px;
-  margin-left: 15px;
-  width:100%;
-  max-width: 200px;
-  display:flex;
-  flex-direction: column;
-  border: 1px solid #CCCCCC;
-  border-radius: 5px; /*curves border*/
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
-  background: rgba(237, 41, 57, 0.5);
-  text-decoration: none;
-}
-
-input[type=checkbox] {
-  min-width: 20px;
-  min-height: 20px;
-  padding-right: 5px;
-  border-radius: 4px;
-  border-color: #ffffff;
-  /*-webkit-appearance: button;*/
-}
-
-input[type=checkbox]:hover {
-  box-shadow:0px 0px 20px #1300ff;
-}
-
-.specialOffers {
-  min-height:10vh;
-  width:90%;
-  background:#EE0000;
-  margin-top: 15px;
-  margin-right: 5%;
-  margin-left: 5%;
-  /*margin-bottom: 15px;*/
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.sortByFees{
-  min-height:10vh;
-  width:90%;
-  background:#EE0000;
-  margin-top: 15px;
-  margin-right: 5%;
-  margin-left: 5%;
-  /*margin-bottom: 15px;*/
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.physicalLocation {
-  min-height:10vh;
-  width:90%;
-  background:#EEE000;
-  margin-top: 15px;
-  margin-right: 5%;
-  margin-left: 5%;
-  /*margin-bottom: 15px;*/
-  display:flex;
-  flex-direction:column;
-  align-items: center;
-}
-
-.sortByPerformance{
-  min-height:10vh;
-  width:90%;
-  background:#EEE000;
-  margin-top: 15px;
-  margin-right: 5%;
-  margin-left: 5%;
-  /*margin-bottom: 15px;*/
-  display:flex;
-  flex-direction:column;
-  align-items: center;
-}
-
-.title{
-  text-align: center;
-  text-decoration: underline;
-  /*align-content: center;*/
+.resultsBackground {
+  background-color: #ddd;
+	background-size: cover;
   width: 100%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  /*background: #AAAAAA; - used for grey boxing before deleting*/
+  min-height: 100vh;
 }
 
-.openingHeader {
+
+.resultsBanner {
+  background-color: #ccc;
+  animation-name: fadein;
+  animation-duration: 2s;
+}
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.resultsBanner h1 {
+  font-size: 3em;
+  text-align: center;
+  color: rgba(248,250,242,.8);
+}
+
+.resultsBanner p {
+  font-size: 1.1em;
+  text-align: center;
+  margin-top:;
+  color: rgba(248,250,242,.8);
+}
+
+.resultsFilters {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border-bottom: 4px solid #FF0000;
+  background: #bbb;
+  text-align: center;
+  font-size: 1.2em;
 }
 
-.controls{
-  width:25%;
-  float: left;
+.resultsFilters select {
+  color: rgba(255,255,255,.8);
   display: flex;
-  flex-direction: column;
-  justify-content: left;
+  flex-direction: row;
+  background: transparent;
+  width:auto;
+  text-align-last: center;
+  padding: px;
+  font-size: 1em;
+  border: 0px solid #ddd;
+  height:35px;
+  cursor: pointer;
+  overflow:hidden;
+  font-weight: lighter;
+  background:url("../../photos/results-arrow.png") no-repeat right rgba(0,0,0,.0);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
 }
 
-.underScore{
-  color: red;
+
+.resultsFilters select:focus {
+  outline: none;
 }
 
-.resultsPage{
-  width: 75%;
-  height: 100%;
-  float: right;
-  display: flex;
-  margin-right: 15px;
-  flex-direction: column;
-  justify-content: right;
-  background: #ffffff;
+.resultsFilters select:hover {
+  background:url("../../photos/results-arrow-hover.png") no-repeat right rgba(0,0,0,.0);
+  color: rgba(255,255,255,1);
 }
 
-.sortingOrder {
-  min-height: 300px;
-  background: #FFFFFF;
-  margin-top: 15px;
-  margin-right: 15px;
-  margin-left: 15px;
-  width:100%;
-  max-width: 200px;
-  display:flex;
-  flex-direction: column;
-  border: 1px solid #CCCCCC;
-  border-radius: 5px; /*curves border*/
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
-  background: rgba(237, 41, 57, 0.5);
-  text-decoration: none;
-  float: left;
+.feesFilter select {
+  padding-right: 25px;
+}
 
-  background: #dddddd;
+.performanceFilter select {
+  padding-right: 25px;
+  padding-left: 160px;
+}
 
+.specialOffersFilter select {
+  padding-right: 25px;
+  padding-left: 160px;
+}
+
+.locationFilter select {
+  padding-right: 25px;
+  padding-left: 160px;
 }
