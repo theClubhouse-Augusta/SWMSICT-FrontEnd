@@ -48,12 +48,32 @@
   cursor: pointer;
 }
 
+.riskRadioActive {
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  padding:15px;
+  width: 200px;
+  height: 200px;
+  border-radius:50%;
+  border:3px solid rgba(255,255,255, .3);
+  color: rgba(255,255,255, .8);
+  font-family: sans-serif;
+  font-weight: lighter;
+  justify-content: center;
+  margin:20px;
+  transition: 600ms ease;
+  cursor: pointer;
+  background: rgba(204, 203, 217, .9);
+}
+
 .riskRadio:hover {
   background-color:rgba(158, 191, 210, .7);
-	color: rgba(255,255,255, 1);
+  color: rgba(255,255,255, 1);
   animation: grow 1s;
   animation-iteration-count: 1;
 }
+
 
 @keyframes grow {
   90% {
@@ -74,23 +94,23 @@
 .userInfoRisk input[type="button"] {
   width:320px;
   display: inline-block;
-	padding: 10px 14px;
+        padding: 10px 14px;
   margin: 40px;
-	color: rgba(255,255,255, .8);
-	border: 3.0px solid rgba(255,255,255, .7);
-	text-decoration: none;
-	font-size: .6em;
-	line-height: 120%;
-	background-color: rgba(255,255,255, 0);
-	border-radius: 6px;
-	transition: 600ms ease;
+        color: rgba(255,255,255, .8);
+        border: 3.0px solid rgba(255,255,255, .7);
+        text-decoration: none;
+        font-size: .6em;
+        line-height: 120%;
+        background-color: rgba(255,255,255, 0);
+        border-radius: 6px;
+        transition: 600ms ease;
   font-weight: normal;
   outline: none;
-	cursor: pointer;
+        cursor: pointer;
 }
 
 .userInfoRisk input[type="button"]:hover {
   background-color:rgba(201, 177, 155, .9);
-	color: rgba(255,255,255, 1);
+        color: rgba(255,255,255, 1);
   border: 3px solid rgba(0, 127, 0, 0);
 }
