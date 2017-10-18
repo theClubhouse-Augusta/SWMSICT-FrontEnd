@@ -24,7 +24,7 @@ export default class SignupBox extends React.PureComponent {
   };
   getSessionData = () => {
     let data = {};
-    data.userID = 1;
+    data.userID = sessionStorage.getItem('userID');
     data.minInvestment = sessionStorage.getItem('minInvestment');
     data.riskLevel = sessionStorage.getItem('riskLevel');
     data.isStock = sessionStorage.getItem('isStock');
@@ -93,6 +93,7 @@ export default class SignupBox extends React.PureComponent {
       }
     })
   }
+
   signIn=()=> {
     let _this = this;
     let data = new FormData();
@@ -131,8 +132,33 @@ export default class SignupBox extends React.PureComponent {
       sessionStorage.setItem('firstName', JSON.stringify(json.firstName));
       sessionStorage.setItem('userID', JSON.stringify(json.id));
       alert("token created, information stored to session");
+      _this.sendFormData();
     })
   };
+  sendFormData = () => {
+    let data = new FormData();
+
+    data.append('userID', sessionStorage.getItem('userID'));
+    data.append('riskLevel', sessionStorage.getItem('riskLevel'));
+    data.append('minInvestment', sessionStorage.getItem('minInvestment'));
+    data.append('isStock', sessionStorage.getItem('isStock'));
+    data.append('isBond', sessionStorage.getItem('isBond'));
+    data.append('isMutualFund', sessionStorage.getItem('isMutualFund'));
+    data.append('isETF', sessionStorage.getItem('isETF'));
+    data.append('isIndexFund', sessionStorage.getItem('isIndexFund'));
+    data.append('isRetirement', sessionStorage.getItem('isRetirement'));
+
+    fetch ('http://localhost:8000/api/saveSearchData',{
+      method: 'POST',
+      body: data
+    })
+    .then(function(response){
+      return response.json();
+    })
+    .then(function(json){
+      console.log(json.success);
+    })
+  }
 
   render() {
     if(this.props.openSignUp === true)

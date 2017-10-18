@@ -26,7 +26,14 @@
      }
    }
    componentWillMount() {
-     this.getSearchData();
+     if(sessionStorage.getItem('userID') != 0) {
+       this.getSearchData();
+       console.log('user exists');
+     }
+     else {
+       this.getProductsFromSession();
+       console.log('is NULL!');
+     }
    }
    closeWouldYouLike = () => {
      this.setState({
@@ -43,7 +50,7 @@
      let data = new FormData();
      let _this = this;
 
-     data.append('userID', 1);
+     data.append('userID', sessionStorage.getItem('userID'));
 
      fetch ('http://localhost:8000/api/collectSearchData',{
        method: 'POST',
@@ -63,13 +70,53 @@
      }.bind(this))
    }
 
+   getProductsFromSession = (type = 'name', order = 'asc', physLoc = '0', specOff = '0') => {
+     let _this = this;
+     let data = new FormData();
+
+     data.append('userID', '0');
+     data.append('minInvestment', sessionStorage.getItem('minInvestment'));
+     data.append('riskLevel', sessionStorage.getItem('riskLevel'));
+     data.append('isStock', sessionStorage.getItem('isStock'));
+     data.append('isBond', sessionStorage.getItem('isBond'));
+     data.append('isMutualFund', sessionStorage.getItem('isMutualFund'));
+     data.append('isETF', sessionStorage.getItem('isETF'));
+     data.append('isIndexFund', sessionStorage.getItem('isIndexFund'));
+     data.append('isRetirement', sessionStorage.getItem('isRetirement'));
+
+     this.setState({
+       displayOptions: []
+     });
+
+     fetch ('http://localhost:8000/api/getProducts/'+type+'/'+order+'/'+physLoc+'/'+specOff,{
+       method: 'POST',
+       body: data
+     })
+     .then(function(response){
+       return response.json();
+     })
+     .then(function(json){
+       console.log('resultProducts');
+       console.log(json.resultProducts);
+       console.log('messageNum');
+       console.log(json.messageNum);
+       _this.parseResults(data);
+       _this.setState({
+         getProducts:json.resultProducts,
+         message:json.message,
+         messageNum:json.messageNum
+       })
+       _this.forceUpdate();
+     }.bind(this))
+
+   }
 
    getProducts = (searchData, type = 'name', order = 'asc', physLoc = '0', specOff = '0') => {
      let _this = this;
      let data = new FormData();
      searchData = searchData[0];
 
-      data.append('userID', 1);
+      data.append('userID', sessionStorage.getItem('userID'));
       data.append('minInvestment', searchData.minInvestment);
       data.append('riskLevel', searchData.riskLevel);
       data.append('isStock', searchData.isStock);
@@ -164,8 +211,8 @@
                {this.state.message}<br/><br/>
                {this.state.getProducts.map((product,index)=>(
                    <div>
-                   <div><h3>{product.name}</h3></div>
-                   <div><h4>{product.summary}</h4></div>
+                   <div><h3>{product.companyName} - {product.name}</h3></div>
+                   <div><h4>{product.image} - {product.website} - {product.summary}</h4></div>
                    <span>Risk level: {product.riskLevel} </span><span>Minimum investment: ${product.minInvestment} </span><span>Type of investment: {product.isStock} / Fees: {product.fees} / Perf: {product.performance} {product.physicalLocationAvailable} {product.specialOffersAvailable}</span>
                    <div><br/><br/></div>
                    </div>

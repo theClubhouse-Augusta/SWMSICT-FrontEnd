@@ -84,9 +84,9 @@ export default class SignInBox extends React.PureComponent {
           <br/>
           <div className="signInContent">
             <img src={require("../../photos/login-username.svg")}/>
-            <input type="text" className="input" name="email" placeholder="Email" onChange={this.handleEmail}></input><br/>
+            <input type="text" className="signInInput" name="email" placeholder="Email" onChange={this.handleEmail}></input><br/>
             <img src={require("../../photos/login-password.svg")}/>
-            <input type="password" className="input" name="password" placeholder="Password" onChange={this.handlePassword}></input>
+            <input type="password" className="signInInput" name="password" placeholder="Password" onChange={this.handlePassword}></input>
             <br/>
             <div>
               <input type="button" value="Log In" className="logInButton" onClick={this.signIn}></input>

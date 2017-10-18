@@ -10,6 +10,17 @@ import './style.css';
 import './styleM.css';
 
 export default class UserInfoContribution extends React.PureComponent {
+  constructor(){
+    super();
+  }
+  componentWillMount(){
+    sessionStorage.setItem('isStock', 0);
+    sessionStorage.setItem('isBond', 0);
+    sessionStorage.setItem('isMutualFund', 0);
+    sessionStorage.setItem('isETF', 0);
+    sessionStorage.setItem('isIndexFund', 0);
+    sessionStorage.setItem('isRetirement', 0);
+  }
   render() {
     return (
       <div className="contributionContainer">
